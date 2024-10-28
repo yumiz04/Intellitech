@@ -1,0 +1,70 @@
+
+// Usar la base de datos
+use("intellitech-retail")
+
+// Crear la coleccion de proveedores
+db.createCollection("proveedores", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["nombreProveedor"],
+            properties: {
+                id_proveedor: {
+                    bsonType: "int",
+                    description: "ID único del proveedor"
+                },
+                nombreProveedor: {
+                    bsonType: "object",
+                    title: "Validación del objeto nombreProveedor",
+                    required: ["primerNombre", "apellidoPaterno", "apellidoMaterno"],
+                    properties: {
+                        primerNombre: {
+                            bsonType: "string",
+                            description: "Nombre del proveedor"
+                        },
+                        apellidoPaterno: {
+                            bsonType: "string",
+                            description: "Apellido paterno del proveedor"
+                        },
+                        apellidoMaterno: {
+                            bsonType: "string",
+                            description: "Apellido materno del proveedor"
+                        }
+                    }
+                },
+                telefono_proveedor: {
+                    bsonType: "array",
+                    description: "Número de teléfono del proveedor",
+                    minItems: 1,
+                    maxItems: 3,
+                    uniqueItems: true,
+                    items: {
+                        bsonType: 'string',
+                        pattern: "^(\\+\\d{1,3}[- ]?)?\\d{10}$" // Valida lada internacional (opcional) y 10 digitos
+                    }
+                },
+                correo_proveedor: {
+                    bsonType: "string",
+                    description: "Correo electrónico del proveedor",
+                    pattern: "^[A-Za-z\\d.-]{1,}@[A-Za-z\\d.-]{1,}[.][A-Za-z\\d.-]{1,}$" // Valida el correo estandar
+                },
+                rfc: {
+                    bsonType: "string",
+                    description: "RFC del proveedor",
+                    pattern: "^[A-ZÑ&]{3,4}\\d{6}[A-Z0-9]{3}$" // Valida RFC de 13 caracteres
+                },
+                nombre_empresa: {
+                    bsonType: "string",
+                    description: "Nombre de la empresa del proveedor",
+                    pattern: "^[a-zA-Z0-9\\s]+$" // Valida el nombre de la empresa
+                }
+            }
+        }
+    }
+});
+
+// Crear índice único para el campo correo
+db.proveedores.createIndex(
+    { correo_proveedor: 1 }, // Indexa por correo
+    { unique: true } // Solo acepta correos unicos
+);

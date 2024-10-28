@@ -1,0 +1,17 @@
+
+// Usar la base de datos
+use("intellitech-retail")
+
+// Insertar un documento en la colección de clientes
+db.clientes.insertOne({
+    id_cliente: 1,
+    nombreCliente: {
+        primerNombre: "Juan",
+        apellidoPaterno: "Pérez",
+        apellidoMaterno: "García"
+    },
+    telefono: ["+523537263244", "+16652365475"],
+    correo: "juan.perez@gmail.com",
+    rfc: "PEGA123456H12",
+    nombre_empresa: "Tech Solutions"
+});

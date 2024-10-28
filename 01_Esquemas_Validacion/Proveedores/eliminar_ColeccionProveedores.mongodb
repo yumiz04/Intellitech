@@ -1,0 +1,5 @@
+
+// Usar la base de datos
+use("intellitech-retail")
+
+db.proveedores.drop()

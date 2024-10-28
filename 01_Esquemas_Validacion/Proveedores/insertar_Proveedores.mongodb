@@ -1,0 +1,17 @@
+
+// Usar la base de datos
+use("intellitech-retail")
+
+// Insertar el documento en la coleccion de proveedores
+db.proveedores.insertOne({
+    id_proveedor: 1,
+    nombreProveedor: {
+        primerNombre: "Ana",
+        apellidoPaterno: "López",
+        apellidoMaterno: "Martínez"
+    },
+    telefono_proveedor: ["+523537628374", "+18907623322"],
+    correo_proveedor: "ana.lopez@proveedores.com",
+    rfc: "LOMA123456H12",
+    nombre_empresa: "Distribuciones"
+});
