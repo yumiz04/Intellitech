@@ -1,0 +1,15 @@
+# Authors and contributors
+
+## Amado Carrillo Juárez
+- **Email**: l22420421@jiquilpan.tecnm.mx
+- **Role**: Database Schema Design, README Documentation, Data Validation and Testing
+- **Control Number**: 22420421
+- **Topic**: MongoDB Validation Schemas
+- **Date**: October 2024
+
+## Danna Geraldine Ávila Garcia
+- **Email**: l22420446@jiquilpan.tecnm.mx
+- **Role**: Database Schema Design, Data Insertion Scripts, Research and Initial Setup
+- **Control Number**: 22420446
+- **Topic**: MongoDB Validation Schemas
+- **Date**: October 2024
