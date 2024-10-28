@@ -11,6 +11,7 @@ Definition of the schemas and modeling of the complete database for the Intellit
 ```
 cd Documents/tec/S5/BD
 ```
+> And your command will be the path where you want to work, for example:
 ```
 cd Documents/DB
 ```
@@ -20,9 +21,9 @@ git clone https://github.com/yumiz04/Intellitech.git
 ```
 ### Usage
 #### Prerequisites
-1. Have MongoDB installed locally.
-2. Have Visual Studio Code (VS Code) installed.
-3. Have the MongoDB extension for VS Code installed.
+- Have MongoDB installed locally.
+- Have Visual Studio Code (VS Code) installed.
+- Have the MongoDB extension for VS Code installed.
 #### Steps
 1. Navigate to the Intellitech directory:
 ```
@@ -32,7 +33,7 @@ cd Intellitech
 ```
 code .
 ```
-to open VS Code in that directory.
+    to open VS Code in that directory.
 3. Go to the MongoDB section on the left side of VS Code and start a local connection.
 4. Open the files in the following order:
 - Schema creation file.
