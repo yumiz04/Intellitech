@@ -1,0 +1,38 @@
+// Usar la base de datos
+use("intellitech-retail")
+
+// Colección clientes
+db.createCollection("clientes", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["id_cliente", "nombre", "apellido_paterno", "apellido_materno", "telefono", "correo"],
+            properties: {
+                id_cliente: { bsonType: "int", description: "ID único del cliente" },
+                nombre: { bsonType: "string", description: "Nombre completo del cliente" },
+                apellido_paterno: { bsonType: "string", description: "Apellido paterno" },
+                apellido_materno: { bsonType: "string", description: "Apellido materno" },
+                telefono: { bsonType: "string", description: "Teléfono del cliente" },
+                correo: { bsonType: "string", description: "Correo electrónico del cliente" },
+                rfc: { bsonType: "string", description: "RFC del cliente" },
+                nombre_empresa: { bsonType: "string", description: "Nombre de la empresa" }
+            }
+        }
+    }
+})
+
+// Colección autenticaciones con referencia a clientes
+db.createCollection("autenticaciones", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["usuario", "contrasena", "id_cliente"],
+            properties: {
+                id_autenticacion: { bsonType: "int", description: "ID único de autenticación" },
+                usuario: { bsonType: "string", description: "Nombre de usuario" },
+                contrasena: { bsonType: "string", description: "Contraseña encriptada" },
+                id_cliente: { bsonType: "int", description: "Referencia al ID del cliente asociado" }
+            }
+        }
+    }
+});

@@ -1,0 +1,54 @@
+// Usar la base de datos
+use("intellitech-retail")
+// Colección proveedores con direcciones_proveedores y compras embebidas
+db.createCollection("proveedores", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["id_proveedor", "nombre_proveedor", "telefono_proveedor", "correo_proveedor"],
+            properties: {
+                id_proveedor: { bsonType: "int", description: "ID único del proveedor" },
+                nombre_proveedor: { bsonType: "string", description: "Nombre completo del proveedor" },
+                telefono_proveedor: { bsonType: "string", description: "Teléfono del proveedor" },
+                correo_proveedor: { bsonType: "string", description: "Correo electrónico del proveedor" },
+                rfc: { bsonType: "string", description: "RFC del proveedor" },
+                nombre_empresa: { bsonType: "string", description: "Nombre de la empresa del proveedor" },
+                
+                // Array de direcciones embebidas
+                direcciones: {
+                    bsonType: "array",
+                    description: "Lista de direcciones del proveedor",
+                    items: {
+                        bsonType: "object",
+                        required: ["estado", "municipio", "localidad", "calle", "codigo_postal"],
+                        properties: {
+                            id_direccion: { bsonType: "int", description: "ID de la dirección" },
+                            estado: { bsonType: "string", description: "Estado" },
+                            municipio: { bsonType: "string", description: "Municipio" },
+                            localidad: { bsonType: "string", description: "Localidad" },
+                            calle: { bsonType: "string", description: "Calle" },
+                            codigo_postal: { bsonType: "string", description: "Código postal" },
+                            descripcion_adicional: { bsonType: "string", description: "Descripción adicional de la dirección" }
+                        }
+                    }
+                },
+                
+                // Array de compras embebidas
+                compras: {
+                    bsonType: "array",
+                    description: "Lista de compras realizadas al proveedor",
+                    items: {
+                        bsonType: "object",
+                        required: ["id_compra", "fecha_compra", "precio_compra"],
+                        properties: {
+                            id_compra: { bsonType: "int", description: "ID de la compra" },
+                            fecha_compra: { bsonType: "date", description: "Fecha en la que se realizó la compra" },
+                            precio_compra: { bsonType: "decimal", description: "Precio de la compra" },
+                            margen_ganancia: { bsonType: "decimal", description: "Margen de ganancia aplicado en la compra" }
+                        }
+                    }
+                }
+            }
+        }
+    }
+});
