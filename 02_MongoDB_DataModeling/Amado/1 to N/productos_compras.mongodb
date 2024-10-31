@@ -1,0 +1,58 @@
+
+// Usar la base de datos
+use("intellitech-retail")
+
+// Crear la coleccion de productos_compras
+db.createCollection("productos_compras", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["id_producto_compra", "cantidad", "descuentos"],
+            properties: {
+                id_producto_compra: {
+                    bsonType: "int",
+                    description: "ID único del producto en la compra"
+                },
+                cantidad: {
+                    bsonType: "int",
+                    description: "Cantidad de productos comprados"
+                },
+                descuentos: {
+                    bsonType: "array",
+                    items: {
+                        bsonType: "object",
+                        required: ["id_descuento", "descripcion", "porcentaje_descuento", "fecha_inicio", "fecha_fin"],
+                        properties: {
+                            id_descuento: { 
+                                bsonType: "int", 
+                                description: "ID único del descuento" 
+                            },
+                            descripcion: { 
+                                bsonType: "string", 
+                                description: "Descripción del descuento" 
+                            },
+                            porcentaje_descuento: { 
+                                bsonType: "double", 
+                                description: "Porcentaje de descuento aplicado" 
+                            },
+                            fecha_inicio: { 
+                                bsonType: "date", 
+                                description: "Fecha de inicio del descuento" 
+                            },
+                            fecha_fin: { 
+                                bsonType: "date", 
+                                description: "Fecha de fin del descuento" 
+                            }
+                        }
+                    },
+                    description: "Array de descuentos aplicados al producto en la compra"
+                }
+            }
+        }
+    }
+});
+
+db.productos_compras.createIndex(
+    { id_producto_compra: 1 }, // Indexar por id_producto_compra
+    { unique: true } // Asegura que cada id sea único
+);

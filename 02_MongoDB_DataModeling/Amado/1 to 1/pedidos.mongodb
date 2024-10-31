@@ -7,7 +7,7 @@ db.createCollection("pedidos", {
     validator: {
         $jsonSchema: {
             bsonType: "object",
-            required: ["id_pedido", "fecha_pedido", "total_pedido", "descuento_total", "total_general", "tiempos_entrega", "tiempo_llegada"],
+            required: ["id_pedido", "fecha_pedido", "total_pedido", "tiempos_entrega"],
             properties: {
                 id_pedido: { 
                     bsonType: "int",
@@ -21,19 +21,30 @@ db.createCollection("pedidos", {
                     bsonType: "double",
                     description: "Monto total del pedido antes de descuentos"
                 },
-                descuento_total: {
+                total_descuento: {
                     bsonType: "double",
                     description: "Monto total del descuento aplicado al pedido"
                 },
                 tiempos_entrega: {
-                    bsonType: "string",
-                    description: "Tiempo estimado de entrega del pedido"
-                },
-                tiempo_llegada: {
-                    bsonType: "string",
-                    description: "Tiempo estimado de llegada del pedido al cliente"
+                    bsonType: "array",
+                    items: {
+                        bsonType: "object",
+                        required: ["tiempo_llegada"],
+                        properties: {
+                            tiempo_llegada: {
+                                bsonType: "string",
+                                description: "Tiempo estimado de llegada del pedido al cliente",
+                                pattern: "^(\\d{4})-(\\d{2})-(\\d{2})$"  // Validar el formato de fecha YYYY-MM-DD
+                            }
+                        }
+                    },
+                    description: "Array de tiempos de entrega del pedido"
                 }
             }
         }
     }
 });
+
+db.pedidos.createIndex(
+    { fecha_pedido: 1 } // Indexar por fecha_pedido
+);
