@@ -1,0 +1,39 @@
+
+// Usar la base de datos
+use("intellitech-retail")
+
+// Crear la coleccion de pedidos
+db.createCollection("pedidos", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["id_pedido", "fecha_pedido", "total_pedido", "descuento_total", "total_general", "tiempos_entrega", "tiempo_llegada"],
+            properties: {
+                id_pedido: { 
+                    bsonType: "int",
+                    description: "ID único del pedido"
+                },
+                fecha_pedido: {
+                    bsonType: "date",
+                    description: "Fecha en la que se realizó el pedido"
+                },
+                total_pedido: {
+                    bsonType: "double",
+                    description: "Monto total del pedido antes de descuentos"
+                },
+                descuento_total: {
+                    bsonType: "double",
+                    description: "Monto total del descuento aplicado al pedido"
+                },
+                tiempos_entrega: {
+                    bsonType: "string",
+                    description: "Tiempo estimado de entrega del pedido"
+                },
+                tiempo_llegada: {
+                    bsonType: "string",
+                    description: "Tiempo estimado de llegada del pedido al cliente"
+                }
+            }
+        }
+    }
+});

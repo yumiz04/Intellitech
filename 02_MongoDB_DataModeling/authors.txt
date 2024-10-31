@@ -1,0 +1,13 @@
+# Authors and contributors
+
+## Amado Carrillo Juárez
+- **Email**: l22420421@jiquilpan.tecnm.mx
+- **Control Number**: 22420421
+- **Topic**: MongoDB Data Modeling
+- **Date**: October 2024
+
+## Danna Geraldine Ávila Garcia
+- **Email**: l22420446@jiquilpan.tecnm.mx
+- **Control Number**: 22420446
+- **Topic**: MongoDB Data Modeling
+- **Date**: October 2024
