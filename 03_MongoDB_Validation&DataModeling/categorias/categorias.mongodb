@@ -1,0 +1,28 @@
+
+// Usar la base de datos
+use("intellitech-retail")
+
+// Crear la colección de categorías
+db.createCollection("categorias", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["nombre_categoria"],
+            properties: {
+                id_categoria: {
+                    bsonType: "objectId",
+                    description: "ID único de la categoría"
+                },
+                nombre_categoria: {
+                    bsonType: "string",
+                    description: "Nombre de la categoría"
+                }
+            }
+        }
+    }
+});
+
+// Crear índice único para nombre_categoria
+db.categorias.createIndex(
+    { nombre_categoria: 1 }, { unique: true }
+);

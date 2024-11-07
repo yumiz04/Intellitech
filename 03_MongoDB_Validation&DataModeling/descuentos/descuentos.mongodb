@@ -1,0 +1,47 @@
+
+// Usar la base de datos
+use("intellitech-retail")
+
+// Crear la colección de descuentos
+db.createCollection("descuentos", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["descripcion", "porcentaje_descuento", "fecha_inicio", "fecha_fin"],
+            properties: {
+                id_descuento: {
+                    bsonType: "objectId",
+                    description: "ID único del descuento"
+                },
+                descripcion: {
+                    bsonType: "string",
+                    description: "Descripción del descuento"
+                },
+                porcentaje_descuento: {
+                    bsonType: "double",
+                    description: "Porcentaje de descuento",
+                    minimum: 0,
+                    maximum: 100
+                },
+                fecha_inicio: {
+                    bsonType: "date",
+                    description: "Fecha de inicio del descuento"
+                },
+                fecha_fin: {
+                    bsonType: "date",
+                    description: "Fecha de fin del descuento"
+                }
+            }
+        }
+    }
+});
+
+// Crear indice para fecha_inicio
+db.descuentos.createIndex(
+    { fecha_inicio: 1 }
+);
+
+// Crear indice para fecha_fin
+db.descuentos.createIndex(
+    { fecha_fin: 1 }
+);

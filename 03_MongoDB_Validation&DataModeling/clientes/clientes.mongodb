@@ -1,0 +1,135 @@
+
+// Usar la base de datos
+use("intellitech-retail")
+
+// Crear la colección de clientes
+db.createCollection("clientes", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["nombre_cliente", "contacto"],
+            properties: {
+                id_cliente: {
+                    bsonType: "objectId",
+                    description: "ID único del cliente"
+                },
+                nombre_cliente: {
+                    bsonType: "object",
+                    title: "Validación del objeto nombre_cliente",
+                    required: ["primer_nombre", "apellido_paterno", "apellido_materno"],
+                    properties: {
+                        primer_nombre: {
+                            bsonType: "string",
+                            description: "Nombre del cliente"
+                        },
+                        apellido_paterno: {
+                            bsonType: "string",
+                            description: "Apellido paterno del cliente"
+                        },
+                        apellido_materno: {
+                            bsonType: "string",
+                            description: "Apellido materno del cliente"
+                        }
+                    }
+                },
+                contacto: {
+                    bsonType: "object",
+                    title: "Validación del objeto contacto",
+                    required: ["telefono", "correo"],
+                    properties: {
+                        telefono: {
+                            bsonType: "array",
+                            description: "Teléfono de contacto del cliente",
+                            minItems: 1,
+                            maxItems: 3,
+                            uniqueItems: true,
+                            items: {
+                                bsonType: 'string',
+                                pattern: "^(\\+\\d{1,3}[- ]?)?\\d{10}$" // Valida lada internacional (opcional) y 10 dígitos
+                            }
+                        },
+                        correo: {
+                            bsonType: "string",
+                            description: "Correo electrónico del cliente",
+                            pattern: "^[A-Za-z\\d.-]+@[A-Za-z\\d.-]+\\.[A-Za-z]{2,}$" // Valida el correo estándar
+                        }
+                    }
+                },
+                rfc: {
+                    bsonType: "string",
+                    description: "RFC del cliente",
+                    pattern: "^[A-ZÑ&]{3,4}\\d{6}[A-Z0-9]{3}$" // Valida RFC de 13 caracteres
+                },
+                nombre_empresa: {
+                    bsonType: "string",
+                    description: "Nombre de la empresa del cliente"
+                },
+                direcciones: {
+                    bsonType: "array",
+                    items: {
+                        bsonType: "object",
+                        required: ["estado", "municipio", "calle", "codigo_postal"],
+                        properties: {
+                            id_direccion: {
+                                bsonType: "objectId",
+                                description: "ID único de las direcciones del cliente"
+                            },
+                            pais: {
+                                bsonType: "string",
+                                description: "País de la dirección"
+                            },
+                            estado: {
+                                bsonType: "string",
+                                description: "Estado de la dirección"
+                            },
+                            municipio: {
+                                bsonType: "string",
+                                description: "Municipio de la dirección"
+                            },
+                            localidad: {
+                                bsonType: "string",
+                                description: "Localidad de la dirección"
+                            },
+                            calle: {
+                                bsonType: "string",
+                                description: "Calle de la dirección"
+                            },
+                            codigo_postal: {
+                                bsonType: "string",
+                                description: "Código postal"
+                            },
+                            descripcion_adicional: {
+                                bsonType: "string",
+                                description: "Descripción adicional de la dirección"
+                            }
+                        }
+                    }
+                },
+                autenticaciones: {
+                    bsonType: "object",
+                    required: ["usuario", "contrasena"],
+                    properties: {
+                        usuario: {
+                            bsonType: "string",
+                            description: "Nombre de usuario"
+                        },
+                        contrasena: {
+                            bsonType: "string",
+                            description: "Contraseña encriptada"
+                        }
+                    }
+                }
+            }
+        }
+    }
+});
+
+// Índice único para contacto.correo
+db.clientes.createIndex(
+    { "contacto.correo": 1 }, { unique: true }
+);
+
+// Índice compuesto para nombre_cliente.primer_nombre y nombre_cliente.apellido_paterno
+db.clientes.createIndex(
+    { "nombre_cliente.primer_nombre": 1, "nombre_cliente.apellido_paterno": 1 }
+);
