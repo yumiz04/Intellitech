@@ -1,0 +1,109 @@
+
+// Usar la base de datos
+use("intellitech-retail")
+
+// Crear la colección de pedidos
+db.createCollection("pedidos", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["fecha_pedido", "descuento_total", "detalles_pedido", "tiempos_entrega"],
+            properties: {
+                id_pedido: {
+                    bsonType: "objectId",
+                    description: "ID único del pedido"
+                },
+                fecha_pedido: {
+                    bsonType: "date",
+                    description: "Fecha del pedido"
+                },
+                descuento_total: {
+                    bsonType: "double",
+                    description: "Total del descuento aplicado"
+                },
+                detalles_pedido: {
+                    bsonType: "array",
+                    items: {
+                        bsonType: "object",
+                        required: ["fecha_pedido", "precio_venta", "cantidad", "total", "id_producto"],
+                        properties: {
+                            id_detalles_pedido: {
+                                bsonType: "objectId",
+                                description: "ID único del detalle del pedido"
+                            },
+                            fecha_pedido: {
+                                bsonType: "date",
+                                description: "Fecha del detalle del pedido"
+                            },
+                            numero_serie: {
+                                bsonType: "string",
+                                description: "Número de serie del producto"
+                            },
+                            precio_venta: {
+                                bsonType: "double",
+                                description: "Precio de venta del producto"
+                            },
+                            cantidad: {
+                                bsonType: "int",
+                                description: "Cantidad de productos en el detalle"
+                            },
+                            descuento_producto: {
+                                bsonType: "double",
+                                description: "Descuento aplicado al producto"
+                            },
+                            total: {
+                                bsonType: "double",
+                                description: "Total del detalle del pedido"
+                            },
+                            id_producto: {
+                                bsonType: "objectId",
+                                description: "ID del producto"
+                            }
+                        }
+                    }
+                },
+                anticipos: {
+                    bsonType: "array",
+                    items: {
+                        bsonType: "object",
+                        required: ["anticipo"],
+                        properties: {
+                            anticipo: {
+                                bsonType: "double",
+                                description: "Monto del anticipo del pedido"
+                            }
+                        }
+                    }
+                },
+                tiempos_entrega: {
+                    bsonType: "array",
+                    items: {
+                        bsonType: "object",
+                        required: ["tiempo_llegada"],
+                        properties: {
+                            id_tiempos_entrega: {
+                                bsonType: "objectId",
+                                description: "ID único del tiempo de entrega"
+                            },
+                            tiempo_llegada: {
+                                bsonType: "string",
+                                description: "Tiempo estimado de llegada del pedido",
+                                pattern: "^(\\d{4})-(\\d{2})-(\\d{2})$"
+                            }
+                        }
+                    },
+                    description: "Array de tiempos de entrega del pedido"
+                }
+            }
+        }
+    }
+});
+
+// Crear índices para mejorar consultas
+db.pedidos.createIndex(
+    { "detalles_pedido.id_producto": 1 }
+);
+
+db.pedidos.createIndex(
+    { "tiempos_entrega.id_tiempos_entrega": 1 }
+);

@@ -1,0 +1,6 @@
+
+// Usar la base de datos
+use("intellitech-retail")
+
+// Consultar los registros
+db.productos.find()

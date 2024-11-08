@@ -1,0 +1,53 @@
+
+// Usar la base de datos
+use("intellitech-retail");
+
+// Crear la colección de resenas
+db.createCollection("resenas", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["comentario", "calificacion", "fecha_reseña", "id_cliente", "id_producto"],
+            properties: {
+                id_resena: {
+                    bsonType: "objectId",
+                    description: "ID único de la reseña"
+                },
+                comentario: {
+                    bsonType: "string",
+                    description: "Comentario del cliente sobre el producto"
+                },
+                calificacion: {
+                    bsonType: "string",
+                    enum: ["Excelente", "Bueno", "Regular", "Malo", "Terrible"],
+                    description: "Calificación del producto"
+                },
+                fecha_reseña: {
+                    bsonType: "date",
+                    description: "Fecha en la que se hizo la reseña"
+                },
+                id_cliente: {
+                    bsonType: "objectId",
+                    description: "ID del cliente que hace la reseña"
+                },
+                id_producto: {
+                    bsonType: "objectId",
+                    description: "ID del producto evaluado"
+                }
+            }
+        }
+    }
+});
+
+// Crear índices para optimizar consultas
+db.resenas.createIndex(
+    { id_cliente: 1 }
+);
+
+db.resenas.createIndex(
+    { id_producto: 1 }
+);
+
+db.resenas.createIndex(
+    { calificacion: 1 }
+);

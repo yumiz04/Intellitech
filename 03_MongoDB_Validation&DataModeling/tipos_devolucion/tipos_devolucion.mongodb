@@ -1,0 +1,28 @@
+
+// Usar la base de datos
+use("intellitech-retail")
+
+// Crear la colección de tipos_devolucion
+db.createCollection("tipos_devolucion", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["descripcion"],
+            properties: {
+                id_tipo_devolucion: {
+                    bsonType: "objectId",
+                    description: "ID único del tipo de devolución"
+                },
+                descripcion: {
+                    bsonType: "string",
+                    description: "Descripción del tipo de devolución"
+                }
+            }
+        }
+    }
+});
+
+// Crear índice único para el campo descripción
+db.tipos_devolucion.createIndex(
+    { descripcion: 1 }, { unique: true }
+);

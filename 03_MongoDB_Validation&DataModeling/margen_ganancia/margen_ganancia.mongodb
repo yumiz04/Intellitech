@@ -1,0 +1,30 @@
+
+// Usar la base de datos
+use("intellitech-retail")
+
+// Crear la colección de margen_ganancia
+db.createCollection("margen_ganancia", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["porcentaje"],
+            properties: {
+                id_margen: {
+                    bsonType: "objectId",
+                    description: "ID único del margen de ganancia"
+                },
+                porcentaje: {
+                    bsonType: "double",
+                    description: "Porcentaje de margen de ganancia",
+                    minimum: 0,
+                    maximum: 100
+                }
+            }
+        }
+    }
+});
+
+// Crear índice para id_margen
+db.margen_ganancia.createIndex(
+    { id_margen: 1 }
+);

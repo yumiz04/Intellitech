@@ -1,0 +1,6 @@
+
+// Usar la base de datos
+use("intellitech-retail")
+
+// Eliminar los registros
+db.resenas.drop()

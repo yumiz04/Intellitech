@@ -1,0 +1,6 @@
+
+// Usar la base de datos
+use("intellitech-retail")
+
+// Insertar el documento en la coleccion de resenas
+db.resenas.insertOne()
