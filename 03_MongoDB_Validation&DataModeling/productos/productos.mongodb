@@ -1,0 +1,53 @@
+
+// Usar la base de datos
+use("intellitech-retail")
+
+// Crear la colección de productos
+db.createCollection("productos", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["nombre_producto", "modelo", "precio", "stock", "id_categoria"],
+            properties: {
+                id_producto: {
+                    bsonType: "int",
+                    description: "ID único del producto"
+                },
+                nombre_producto: {
+                    bsonType: "string",
+                    description: "Nombre del producto"
+                },
+                modelo: {
+                    bsonType: "string",
+                    description: "Modelo del producto"
+                },
+                precio: {
+                    bsonType: "int",
+                    description: "Precio del producto"
+                },
+                stock: {
+                    bsonType: "int",
+                    description: "Cantidad en stock"
+                },
+                descripcion: {
+                    bsonType: "string",
+                    description: "Descripción del producto"
+                },
+                estado_producto: {
+                    bsonType: "string",
+                    enum: ["vendido", "devuelto", "defectuoso", "disponible"],
+                    description: "Estado del producto"
+                },
+                id_categoria: {
+                    bsonType: "int",
+                    description: "ID de la categoría"
+                }
+            }
+        }
+    }
+});
+
+// Crear índice para id_categoria
+db.productos.createIndex(
+    { id_categoria: 1 }
+);

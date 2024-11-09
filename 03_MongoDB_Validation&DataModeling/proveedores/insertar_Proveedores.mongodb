@@ -1,0 +1,347 @@
+
+// Usar la base de datos
+use("intellitech-retail")
+
+// Insertar el documento en la coleccion de proveedores
+db.proveedores.insertMany([
+    {
+        "id_proveedor": 1,
+        "nombre_proveedor": {
+            "primer_nombre": "Tecnolog?a Global S.A.",
+            "apellido_paterno": "Garc?a",
+            "apellido_materno": "Mart?nez"
+        },
+        "contacto": {
+            "telefono": [
+                "5551234567"
+            ],
+            "correo": "contacto@tecnologiaglobal.com"
+        },
+        "rfc": "TGA990123456",
+        "nombre_empresa": "Tecnolog?a Global",
+        "id_direccion": 1
+    },
+    {
+        "id_proveedor": 2,
+        "nombre_proveedor": {
+            "primer_nombre": "Componentes del Norte",
+            "apellido_paterno": "L?pez",
+            "apellido_materno": "Hern?ndez"
+        },
+        "contacto": {
+            "telefono": [
+                "8112345678"
+            ],
+            "correo": "ventas@componentesnorte.com"
+        },
+        "rfc": "CEN990123457",
+        "nombre_empresa": "Componentes del Norte",
+        "id_direccion": 2
+    },
+    {
+        "id_proveedor": 3,
+        "nombre_proveedor": {
+            "primer_nombre": "Electr?nica Universal",
+            "apellido_paterno": "Ram?rez",
+            "apellido_materno": "Cruz"
+        },
+        "contacto": {
+            "telefono": [
+                "4423456789"
+            ],
+            "correo": "info@electronicauni.com"
+        },
+        "rfc": "ELU990123458",
+        "nombre_empresa": "Electr?nica Universal",
+        "id_direccion": 3
+    },
+    {
+        "id_proveedor": 4,
+        "nombre_proveedor": {
+            "primer_nombre": "Distribuidora Digital",
+            "apellido_paterno": "Fern?ndez",
+            "apellido_materno": "Luna"
+        },
+        "contacto": {
+            "telefono": [
+                "5532145678"
+            ],
+            "correo": "soporte@distribuidigital.com"
+        },
+        "rfc": "DID990123459",
+        "nombre_empresa": "Distribuidora Digital",
+        "id_direccion": 4
+    },
+    {
+        "id_proveedor": 5,
+        "nombre_proveedor": {
+            "primer_nombre": "Proveedores de Red",
+            "apellido_paterno": "Morales",
+            "apellido_materno": "Gonz?lez"
+        },
+        "contacto": {
+            "telefono": [
+                "3345678912"
+            ],
+            "correo": "contacto@prored.com.mx"
+        },
+        "rfc": "PRD990123460",
+        "nombre_empresa": "Proveedores de Red",
+        "id_direccion": 5
+    },
+    {
+        "id_proveedor": 6,
+        "nombre_proveedor": {
+            "primer_nombre": "Tecnolog?a del Baj?o",
+            "apellido_paterno": "Cisneros",
+            "apellido_materno": "Reyes"
+        },
+        "contacto": {
+            "telefono": [
+                "4623456781"
+            ],
+            "correo": "ventas@tecbajio.com"
+        },
+        "rfc": "TBA990123461",
+        "nombre_empresa": "Tecnolog?a del Baj?o",
+        "id_direccion": 6
+    },
+    {
+        "id_proveedor": 7,
+        "nombre_proveedor": {
+            "primer_nombre": "Computo Avanzado S.A.",
+            "apellido_paterno": "Salazar",
+            "apellido_materno": "Mendoza"
+        },
+        "contacto": {
+            "telefono": [
+                "7772345678"
+            ],
+            "correo": "soporte@computoavanzado.com"
+        },
+        "rfc": "CAS990123462",
+        "nombre_empresa": "Computo Avanzado",
+        "id_direccion": 7
+    },
+    {
+        "id_proveedor": 8,
+        "nombre_proveedor": {
+            "primer_nombre": "Soluciones en Audio",
+            "apellido_paterno": "Castillo",
+            "apellido_materno": "P?rez"
+        },
+        "contacto": {
+            "telefono": [
+                "4421234567"
+            ],
+            "correo": "audio@solucionesaudio.com"
+        },
+        "rfc": "SEA990123463",
+        "nombre_empresa": "Soluciones en Audio",
+        "id_direccion": 8
+    },
+    {
+        "id_proveedor": 9,
+        "nombre_proveedor": {
+            "primer_nombre": "Innovaci?n Electr?nica",
+            "apellido_paterno": "Guti?rrez",
+            "apellido_materno": "Jim?nez"
+        },
+        "contacto": {
+            "telefono": [
+                "5598765432"
+            ],
+            "correo": "contacto@innovelec.com"
+        },
+        "rfc": "IE990123464",
+        "nombre_empresa": "Innovaci?n Electr?nica",
+        "id_direccion": 9
+    },
+    {
+        "id_proveedor": 10,
+        "nombre_proveedor": {
+            "primer_nombre": "Herramientas Tecnol?gicas",
+            "apellido_paterno": "V?zquez",
+            "apellido_materno": "Hern?ndez"
+        },
+        "contacto": {
+            "telefono": [
+                "5534567890"
+            ],
+            "correo": "ventas@herramtech.com.mx"
+        },
+        "rfc": "HTE990123465",
+        "nombre_empresa": "Herramientas Tecnol?gicas",
+        "id_direccion": 10
+    },
+    {
+        "id_proveedor": 11,
+        "nombre_proveedor": {
+            "primer_nombre": "Distribuciones Electr?nicas",
+            "apellido_paterno": "Ortega",
+            "apellido_materno": "Rojas"
+        },
+        "contacto": {
+            "telefono": [
+                "4456789012"
+            ],
+            "correo": "contacto@distrielect.com"
+        },
+        "rfc": "DIE990123466",
+        "nombre_empresa": "Distribuciones Electr?nicas",
+        "id_direccion": 11
+    },
+    {
+        "id_proveedor": 12,
+        "nombre_proveedor": {
+            "primer_nombre": "Accesorios Tecnol?gicos",
+            "apellido_paterno": "Gonz?lez",
+            "apellido_materno": "Vera"
+        },
+        "contacto": {
+            "telefono": [
+                "5534567891"
+            ],
+            "correo": "ventas@accesoriostec.com"
+        },
+        "rfc": "ATE990123467",
+        "nombre_empresa": "Accesorios Tecnol?gicos",
+        "id_direccion": 12
+    },
+    {
+        "id_proveedor": 13,
+        "nombre_proveedor": {
+            "primer_nombre": "Sistemas Avanzados",
+            "apellido_paterno": "Jim?nez",
+            "apellido_materno": "Alvarez"
+        },
+        "contacto": {
+            "telefono": [
+                "5545678901"
+            ],
+            "correo": "info@sistemasavanzados.com"
+        },
+        "rfc": "SAV990123468",
+        "nombre_empresa": "Sistemas Avanzados",
+        "id_direccion": 13
+    },
+    {
+        "id_proveedor": 14,
+        "nombre_proveedor": {
+            "primer_nombre": "Redes y Conectividad",
+            "apellido_paterno": "Mendoza",
+            "apellido_materno": "L?pez"
+        },
+        "contacto": {
+            "telefono": [
+                "5556789012"
+            ],
+            "correo": "contacto@redesyconectividad.com"
+        },
+        "rfc": "RYC990123469",
+        "nombre_empresa": "Redes y Conectividad",
+        "id_direccion": 14
+    },
+    {
+        "id_proveedor": 15,
+        "nombre_proveedor": {
+            "primer_nombre": "Tecnolog?a para Todos",
+            "apellido_paterno": "Torres",
+            "apellido_materno": "Mart?nez"
+        },
+        "contacto": {
+            "telefono": [
+                "6678901234"
+            ],
+            "correo": "ventas@tecnologiaparatodos.com"
+        },
+        "rfc": "TPT990123470",
+        "nombre_empresa": "Tecnolog?a para Todos",
+        "id_direccion": 15
+    },
+    {
+        "id_proveedor": 16,
+        "nombre_proveedor": {
+            "primer_nombre": "Innovaci?n Digital",
+            "apellido_paterno": "Hern?ndez",
+            "apellido_materno": "Salinas"
+        },
+        "contacto": {
+            "telefono": [
+                "7789012345"
+            ],
+            "correo": "info@innovaciondigital.com"
+        },
+        "rfc": "IND990123471",
+        "nombre_empresa": "Innovaci?n Digital",
+        "id_direccion": 16
+    },
+    {
+        "id_proveedor": 17,
+        "nombre_proveedor": {
+            "primer_nombre": "Electrodom?sticos Modernos",
+            "apellido_paterno": "Salas",
+            "apellido_materno": "Cruz"
+        },
+        "contacto": {
+            "telefono": [
+                "4456789013"
+            ],
+            "correo": "ventas@electromodernos.com"
+        },
+        "rfc": "EM990123472",
+        "nombre_empresa": "Electrodom?sticos Modernos",
+        "id_direccion": 17
+    },
+    {
+        "id_proveedor": 18,
+        "nombre_proveedor": {
+            "primer_nombre": "Equipos y Accesorios",
+            "apellido_paterno": "S?nchez",
+            "apellido_materno": "Moreno"
+        },
+        "contacto": {
+            "telefono": [
+                "5598901234"
+            ],
+            "correo": "contacto@equiposyaccesorios.com"
+        },
+        "rfc": "EAC990123473",
+        "nombre_empresa": "Equipos y Accesorios",
+        "id_direccion": 18
+    },
+    {
+        "id_proveedor": 19,
+        "nombre_proveedor": {
+            "primer_nombre": "Tecnolog?a e Innovaci?n",
+            "apellido_paterno": "Reyes",
+            "apellido_materno": "L?pez"
+        },
+        "contacto": {
+            "telefono": [
+                "6678901235"
+            ],
+            "correo": "info@tecnologiayinnovacion.com"
+        },
+        "rfc": "TIN990123474",
+        "nombre_empresa": "Tecnolog?a e Innovaci?n",
+        "id_direccion": 19
+    },
+    {
+        "id_proveedor": 20,
+        "nombre_proveedor": {
+            "primer_nombre": "Proveedores de Tecnolog?a",
+            "apellido_paterno": "Casta?eda",
+            "apellido_materno": "P?rez"
+        },
+        "contacto": {
+            "telefono": [
+                "7789012346"
+            ],
+            "correo": "ventas@proveedoresdetechnologia.com"
+        },
+        "rfc": "PDT990123475",
+        "nombre_empresa": "Proveedores de Tecnolog?a",
+        "id_direccion": 20
+    }
+])

@@ -1,0 +1,83 @@
+
+// Usar la base de datos
+use("intellitech-retail")
+
+// Insertar el documento en la coleccion de tipos_devolucion
+db.tipos_devolucion.insertMany([
+  {
+      "id_tipo_devolucion": 1,
+      "descripcion": "Reembolso"
+  },
+  {
+      "id_tipo_devolucion": 2,
+      "descripcion": "Cambio"
+  },
+  {
+      "id_tipo_devolucion": 3,
+      "descripcion": "Rechazado"
+  },
+  {
+      "id_tipo_devolucion": 4,
+      "descripcion": "Cr?dito a la cuenta"
+  },
+  {
+      "id_tipo_devolucion": 5,
+      "descripcion": "Reparaci?n"
+  },
+  {
+      "id_tipo_devolucion": 6,
+      "descripcion": "Sustituci?n"
+  },
+  {
+      "id_tipo_devolucion": 7,
+      "descripcion": "Cancelaci?n"
+  },
+  {
+      "id_tipo_devolucion": 8,
+      "descripcion": "Devoluci?n parcial"
+  },
+  {
+      "id_tipo_devolucion": 9,
+      "descripcion": "Intercambio"
+  },
+  {
+      "id_tipo_devolucion": 10,
+      "descripcion": "Devoluci?n de producto defectuoso"
+  },
+  {
+      "id_tipo_devolucion": 11,
+      "descripcion": "Devoluci?n por insatisfacci?n"
+  },
+  {
+      "id_tipo_devolucion": 12,
+      "descripcion": "Devoluci?n por error en el env?o"
+  },
+  {
+      "id_tipo_devolucion": 13,
+      "descripcion": "Devoluci?n de regalo"
+  },
+  {
+      "id_tipo_devolucion": 14,
+      "descripcion": "Devoluci?n de mercanc?a en promoci?n"
+  },
+  {
+      "id_tipo_devolucion": 15,
+      "descripcion": "Devoluci?n de productos personalizados"
+  },
+  {
+      "id_tipo_devolucion": 16,
+      "descripcion": "Reembolso en efectivo"
+  },
+  {
+      "id_tipo_devolucion": 17,
+      "descripcion": "Reembolso a tarjeta de cr?dito"
+  },
+  {
+      "id_tipo_devolucion": 18,
+      "descripcion": "Devoluci?n por falla t?cnica"
+  },
+  {
+      "id_tipo_devolucion": 19,
+      "descripcion": "Devoluci?n por pol?tica de satisfacci?n"
+  }
+])
