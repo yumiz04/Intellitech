@@ -10,11 +10,11 @@ db.createCollection("margen_ganancia", {
             required: ["porcentaje"],
             properties: {
                 id_margen: {
-                    bsonType: "objectId",
+                    bsonType: "int",
                     description: "ID único del margen de ganancia"
                 },
                 porcentaje: {
-                    bsonType: "double",
+                    bsonType: "int",
                     description: "Porcentaje de margen de ganancia",
                     minimum: 0,
                     maximum: 100

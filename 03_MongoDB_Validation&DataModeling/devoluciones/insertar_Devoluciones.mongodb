@@ -3,4 +3,145 @@
 use("intellitech-retail")
 
 // Insertar el documento en la coleccion de devoluciones
-db.devoluciones.insertOne()
+db.devoluciones.insertMany([
+    {
+        "id_devolucion": 1,
+        "fecha_devolucion": "2024-09-05",
+        "cantidad": 1000,
+        "id_tipo_devolucion": 1,
+        "id_pedido": 1
+    },
+    {
+        "id_devolucion": 2,
+        "fecha_devolucion": "2024-09-10",
+        "cantidad": 2500,
+        "id_tipo_devolucion": 2,
+        "id_pedido": 2
+    },
+    {
+        "id_devolucion": 3,
+        "fecha_devolucion": "2024-09-15",
+        "cantidad": 1250,
+        "id_tipo_devolucion": 3,
+        "id_pedido": 3
+    },
+    {
+        "id_devolucion": 4,
+        "fecha_devolucion": "2024-09-18",
+        "cantidad": 2000,
+        "id_tipo_devolucion": 4,
+        "id_pedido": 4
+    },
+    {
+        "id_devolucion": 5,
+        "fecha_devolucion": "2024-09-20",
+        "cantidad": 1750,
+        "id_tipo_devolucion": 5,
+        "id_pedido": 5
+    },
+    {
+        "id_devolucion": 6,
+        "fecha_devolucion": "2024-09-25",
+        "cantidad": 2000,
+        "id_tipo_devolucion": 6,
+        "id_pedido": 6
+    },
+    {
+        "id_devolucion": 7,
+        "fecha_devolucion": "2024-09-08",
+        "cantidad": 1500,
+        "id_tipo_devolucion": 7,
+        "id_pedido": 7
+    },
+    {
+        "id_devolucion": 8,
+        "fecha_devolucion": "2024-09-12",
+        "cantidad": 2250,
+        "id_tipo_devolucion": 8,
+        "id_pedido": 8
+    },
+    {
+        "id_devolucion": 9,
+        "fecha_devolucion": "2024-09-14",
+        "cantidad": 1000,
+        "id_tipo_devolucion": 9,
+        "id_pedido": 9
+    },
+    {
+        "id_devolucion": 10,
+        "fecha_devolucion": "2024-09-19",
+        "cantidad": 2750,
+        "id_tipo_devolucion": 10,
+        "id_pedido": 10
+    },
+    {
+        "id_devolucion": 11,
+        "fecha_devolucion": "2024-09-22",
+        "cantidad": 1500,
+        "id_tipo_devolucion": 11,
+        "id_pedido": 11
+    },
+    {
+        "id_devolucion": 12,
+        "fecha_devolucion": "2024-09-24",
+        "cantidad": 2000,
+        "id_tipo_devolucion": 12,
+        "id_pedido": 12
+    },
+    {
+        "id_devolucion": 13,
+        "fecha_devolucion": "2024-09-28",
+        "cantidad": 1250,
+        "id_tipo_devolucion": 13,
+        "id_pedido": 13
+    },
+    {
+        "id_devolucion": 14,
+        "fecha_devolucion": "2024-09-30",
+        "cantidad": 2000,
+        "id_tipo_devolucion": 14,
+        "id_pedido": 14
+    },
+    {
+        "id_devolucion": 15,
+        "fecha_devolucion": "2024-10-03",
+        "cantidad": 1500,
+        "id_tipo_devolucion": 15,
+        "id_pedido": 15
+    },
+    {
+        "id_devolucion": 16,
+        "fecha_devolucion": "2024-09-09",
+        "cantidad": 2250,
+        "id_tipo_devolucion": 16,
+        "id_pedido": 16
+    },
+    {
+        "id_devolucion": 17,
+        "fecha_devolucion": "2024-09-07",
+        "cantidad": 1000,
+        "id_tipo_devolucion": 17,
+        "id_pedido": 17
+    },
+    {
+        "id_devolucion": 18,
+        "fecha_devolucion": "2024-09-27",
+        "cantidad": 2500,
+        "id_tipo_devolucion": 18,
+        "id_pedido": 18
+    },
+    {
+        "id_devolucion": 19,
+        "fecha_devolucion": "2024-10-05",
+        "cantidad": 1750,
+        "id_tipo_devolucion": 19,
+        "id_pedido": 19
+    },
+    {
+        "id_devolucion": 20,
+        "fecha_devolucion": "2024-09-03",
+        "cantidad": 2000,
+        "id_tipo_devolucion": 19,
+        "id_pedido": 20
+    }
+])

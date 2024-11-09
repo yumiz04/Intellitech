@@ -2,5 +2,86 @@
 // Usar la base de datos
 use("intellitech-retail")
 
-// Insertar el documento en la coleccion de categorias
-db.categorias.insertOne()
+// Insertar los documentos en la colección de categorías
+db.categorias.insertMany([
+    {
+        "id_categoria": 1,
+        "nombre_categoria": "Computadoras"
+    },
+    {
+        "id_categoria": 2,
+        "nombre_categoria": "Telefon?a M?vil"
+    },
+    {
+        "id_categoria": 3,
+        "nombre_categoria": "Electr?nica de Consumo"
+    },
+    {
+        "id_categoria": 4,
+        "nombre_categoria": "Componentes Electr?nicos"
+    },
+    {
+        "id_categoria": 5,
+        "nombre_categoria": "Audio y Video Profesional"
+    },
+    {
+        "id_categoria": 6,
+        "nombre_categoria": "Herramientas y Equipos"
+    },
+    {
+        "id_categoria": 7,
+        "nombre_categoria": "Accesorios de Redes"
+    },
+    {
+        "id_categoria": 8,
+        "nombre_categoria": "Accesorios en General"
+    },
+    {
+        "id_categoria": 9,
+        "nombre_categoria": "Ofertas y Liquidaciones"
+    },
+    {
+        "id_categoria": 10,
+        "nombre_categoria": "Equipos de Gaming"
+    },
+    {
+        "id_categoria": 11,
+        "nombre_categoria": "C?maras Fotogr?ficas"
+    },
+    {
+        "id_categoria": 12,
+        "nombre_categoria": "Consolas y Videojuegos"
+    },
+    {
+        "id_categoria": 13,
+        "nombre_categoria": "Software y Licencias"
+    },
+    {
+        "id_categoria": 14,
+        "nombre_categoria": "Equipos de Seguridad"
+    },
+    {
+        "id_categoria": 15,
+        "nombre_categoria": "Equipos de Oficina"
+    },
+    {
+        "id_categoria": 16,
+        "nombre_categoria": "Impresoras y Esc?neres"
+    },
+    {
+        "id_categoria": 17,
+        "nombre_categoria": "Almacenamiento Externo"
+    },
+    {
+        "id_categoria": 18,
+        "nombre_categoria": "Iluminaci?n Inteligente"
+    },
+    {
+        "id_categoria": 19,
+        "nombre_categoria": "Drones y Accesorios"
+    },
+    {
+        "id_categoria": 20,
+        "nombre_categoria": "Sistemas de Energ?a Solar"
+    }
+])

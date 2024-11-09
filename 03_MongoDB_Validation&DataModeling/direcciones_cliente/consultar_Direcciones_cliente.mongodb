@@ -3,4 +3,4 @@
 use("intellitech-retail")
 
 // Consultar los registros
-db.proveedores.find()
+db.direcciones_cliente.find()

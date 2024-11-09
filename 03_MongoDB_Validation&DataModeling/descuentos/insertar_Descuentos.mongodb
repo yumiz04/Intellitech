@@ -1,6 +1,147 @@
 
 // Usar la base de datos
-use("intellitech-retail")
+use("intellitech-retail");
 
-// Insertar el documento en la coleccion de descuentos
-db.descuentos.insertOne()
+// Insertar múltiples documentos en la colección de descuentos
+db.descuentos.insertMany([
+  {
+      "id_descuento": 1,
+      "descripcion": "Descuento de Verano",
+      "porcentaje_descuento": 5.00,
+      "fecha_inicio": "2024-06-01",
+      "fecha_fin": "2024-06-30"
+  },
+  {
+      "id_descuento": 2,
+      "descripcion": "Descuento de Invierno",
+      "porcentaje_descuento": 10.00,
+      "fecha_inicio": "2024-12-01",
+      "fecha_fin": "2024-12-31"
+  },
+  {
+      "id_descuento": 3,
+      "descripcion": "Descuento de Oto?o",
+      "porcentaje_descuento": 15.00,
+      "fecha_inicio": "2024-09-01",
+      "fecha_fin": "2024-09-30"
+  },
+  {
+      "id_descuento": 4,
+      "descripcion": "Descuento de Primavera",
+      "porcentaje_descuento": 20.00,
+      "fecha_inicio": "2024-03-01",
+      "fecha_fin": "2024-03-31"
+  },
+  {
+      "id_descuento": 5,
+      "descripcion": "Descuento por Buen Fin",
+      "porcentaje_descuento": 25.00,
+      "fecha_inicio": "2024-11-15",
+      "fecha_fin": "2024-11-18"
+  },
+  {
+      "id_descuento": 6,
+      "descripcion": "Descuento de Black Friday",
+      "porcentaje_descuento": 30.00,
+      "fecha_inicio": "2024-11-25",
+      "fecha_fin": "2024-11-28"
+  },
+  {
+      "id_descuento": 7,
+      "descripcion": "Descuento de A?o Nuevo",
+      "porcentaje_descuento": 35.00,
+      "fecha_inicio": "2024-01-01",
+      "fecha_fin": "2024-01-07"
+  },
+  {
+      "id_descuento": 8,
+      "descripcion": "Descuento de Liquidaci?n",
+      "porcentaje_descuento": 40.00,
+      "fecha_inicio": "2024-07-01",
+      "fecha_fin": "2024-07-15"
+  },
+  {
+      "id_descuento": 9,
+      "descripcion": "Descuento por Aniversario",
+      "porcentaje_descuento": 45.00,
+      "fecha_inicio": "2024-05-01",
+      "fecha_fin": "2024-05-07"
+  },
+  {
+      "id_descuento": 10,
+      "descripcion": "Descuento Navide?o",
+      "porcentaje_descuento": 60.00,
+      "fecha_inicio": "2024-12-20",
+      "fecha_fin": "2024-12-26"
+  },
+  {
+      "id_descuento": 11,
+      "descripcion": "Descuento de Primavera Especial",
+      "porcentaje_descuento": 65.00,
+      "fecha_inicio": "2024-03-01",
+      "fecha_fin": "2024-03-31"
+  },
+  {
+      "id_descuento": 12,
+      "descripcion": "Descuento de Verano Especial",
+      "porcentaje_descuento": 50.00,
+      "fecha_inicio": "2024-06-01",
+      "fecha_fin": "2024-06-30"
+  },
+  {
+      "id_descuento": 13,
+      "descripcion": "Descuento Oto?o Especial",
+      "porcentaje_descuento": 55.00,
+      "fecha_inicio": "2024-09-01",
+      "fecha_fin": "2024-09-30"
+  },
+  {
+      "id_descuento": 14,
+      "descripcion": "Descuento Invierno Especial",
+      "porcentaje_descuento": 70.00,
+      "fecha_inicio": "2024-12-01",
+      "fecha_fin": "2024-12-31"
+  },
+  {
+      "id_descuento": 15,
+      "descripcion": "Descuento Aniversario Premium",
+      "porcentaje_descuento": 75.00,
+      "fecha_inicio": "2024-05-01",
+      "fecha_fin": "2024-05-07"
+  },
+  {
+      "id_descuento": 16,
+      "descripcion": "Descuento Buen Fin Max",
+      "porcentaje_descuento": 80.00,
+      "fecha_inicio": "2024-11-15",
+      "fecha_fin": "2024-11-18"
+  },
+  {
+      "id_descuento": 17,
+      "descripcion": "Descuento de Liquidaci?n Final",
+      "porcentaje_descuento": 85.00,
+      "fecha_inicio": "2024-07-01",
+      "fecha_fin": "2024-07-15"
+  },
+  {
+      "id_descuento": 18,
+      "descripcion": "Descuento Black Friday Premium",
+      "porcentaje_descuento": 90.00,
+      "fecha_inicio": "2024-11-25",
+      "fecha_fin": "2024-11-28"
+  },
+  {
+      "id_descuento": 19,
+      "descripcion": "Descuento Navide?o Extendido",
+      "porcentaje_descuento": 95.00,
+      "fecha_inicio": "2024-12-20",
+      "fecha_fin": "2024-12-31"
+  },
+  {
+      "id_descuento": 20,
+      "descripcion": "Descuento A?o Nuevo Especial",
+      "porcentaje_descuento": 50.00,
+      "fecha_inicio": "2024-01-01",
+      "fecha_fin": "2024-01-10"
+  }
+]);

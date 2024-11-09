@@ -3,4 +3,125 @@
 use("intellitech-retail")
 
 // Insertar el documento en la coleccion de compras
-db.compras.insertOne()
+db.compras.insertMany([
+    {
+        "id_compra": 1,
+        "fecha_compra": "2024-01-15",
+        "precio_compra": 10000.00,
+        "id_proveedor": 1
+    },
+    {
+        "id_compra": 2,
+        "fecha_compra": "2024-01-30",
+        "precio_compra": 5500.00,
+        "id_proveedor": 2
+    },
+    {
+        "id_compra": 3,
+        "fecha_compra": "2024-02-14",
+        "precio_compra": 12000.00,
+        "id_proveedor": 3
+    },
+    {
+        "id_compra": 4,
+        "fecha_compra": "2024-02-29",
+        "precio_compra": 8000.00,
+        "id_proveedor": 4
+    },
+    {
+        "id_compra": 5,
+        "fecha_compra": "2024-03-15",
+        "precio_compra": 9200.00,
+        "id_proveedor": 5
+    },
+    {
+        "id_compra": 6,
+        "fecha_compra": "2024-03-30",
+        "precio_compra": 7800.00,
+        "id_proveedor": 6
+    },
+    {
+        "id_compra": 7,
+        "fecha_compra": "2024-04-14",
+        "precio_compra": 11500.00,
+        "id_proveedor": 7
+    },
+    {
+        "id_compra": 8,
+        "fecha_compra": "2024-04-29",
+        "precio_compra": 6400.00,
+        "id_proveedor": 8
+    },
+    {
+        "id_compra": 9,
+        "fecha_compra": "2024-05-14",
+        "precio_compra": 13200.00,
+        "id_proveedor": 9
+    },
+    {
+        "id_compra": 10,
+        "fecha_compra": "2024-05-29",
+        "precio_compra": 10300.00,
+        "id_proveedor": 10
+    },
+    {
+        "id_compra": 11,
+        "fecha_compra": "2024-06-13",
+        "precio_compra": 9000.00,
+        "id_proveedor": 11
+    },
+    {
+        "id_compra": 12,
+        "fecha_compra": "2024-06-28",
+        "precio_compra": 12500.00,
+        "id_proveedor": 12
+    },
+    {
+        "id_compra": 13,
+        "fecha_compra": "2024-07-13",
+        "precio_compra": 8700.00,
+        "id_proveedor": 13
+    },
+    {
+        "id_compra": 14,
+        "fecha_compra": "2024-07-28",
+        "precio_compra": 10900.00,
+        "id_proveedor": 14
+    },
+    {
+        "id_compra": 15,
+        "fecha_compra": "2024-08-12",
+        "precio_compra": 7600.00,
+        "id_proveedor": 15
+    },
+    {
+        "id_compra": 16,
+        "fecha_compra": "2024-08-27",
+        "precio_compra": 9500.00,
+        "id_proveedor": 16
+    },
+    {
+        "id_compra": 17,
+        "fecha_compra": "2024-09-11",
+        "precio_compra": 11100.00,
+        "id_proveedor": 17
+    },
+    {
+        "id_compra": 18,
+        "fecha_compra": "2024-09-26",
+        "precio_compra": 8200.00,
+        "id_proveedor": 18
+    },
+    {
+        "id_compra": 19,
+        "fecha_compra": "2024-10-11",
+        "precio_compra": 9800.00,
+        "id_proveedor": 19
+    },
+    {
+        "id_compra": 20,
+        "fecha_compra": "2024-10-26",
+        "precio_compra": 6900.00,
+        "id_proveedor": 20
+    }
+])

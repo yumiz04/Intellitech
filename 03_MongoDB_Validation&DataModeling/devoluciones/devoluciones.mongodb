@@ -7,56 +7,36 @@ db.createCollection("devoluciones", {
     validator: {
         $jsonSchema: {
             bsonType: "object",
-            required: ["fecha_devolucion", "id_tipo_devolucion", "id_cliente", "detalle_devolucion"],
+            required: ["fecha_devolucion", "id_tipo_devolucion", "id_pedido"],
             properties: {
                 id_devolucion: {
-                    bsonType: "objectId",
+                    bsonType: "int",
                     description: "ID único de la devolución"
                 },
                 fecha_devolucion: {
-                    bsonType: "date",
+                    bsonType: "string",
                     description: "Fecha de la devolución"
                 },
+                cantidad: {
+                    bsonType: "int",
+                    description: "Cantidad"
+                },
                 id_tipo_devolucion: {
-                    bsonType: "objectId",
+                    bsonType: "int",
                     description: "Referencia al tipo de devolución"
                 },
-                detalle_devolucion: {
-                    bsonType: "object",
-                    required: ["cantidad", "estado_producto", "id_producto"],
-                    properties: {
-                        cantidad: {
-                            bsonType: "int",
-                            description: "Cantidad de productos devueltos"
-                        },
-                        estado_producto: {
-                            bsonType: "string",
-                            enum: ["defectuoso", "no funcional", "otros"],
-                            description: "Estado del producto devuelto"
-                        },
-                        id_producto: {
-                            bsonType: "objectId",
-                            description: "ID del producto"
-                        }
-                    }
-                },
-                id_cliente: {
-                    bsonType: "objectId",
-                    description: "ID del cliente que realiza la devolución"
+                id_pedido: {
+                    bsonType: "int",
+                    description: "ID del pedido que realiza la devolución"
                 }
             }
         }
     }
 });
 
-// Crear índice para id_producto
+// Crear índice para id_pedido
 db.devoluciones.createIndex(
-    { "detalle_devolucion.id_producto": 1 }
-);
-
-// Crear índice para id_cliente
-db.devoluciones.createIndex(
-    { id_cliente: 1 }
+    { id_pedido: 1 }
 );
 
 // Crear índice para id_tipo_devolucion

@@ -10,7 +10,7 @@ db.createCollection("descuentos", {
             required: ["descripcion", "porcentaje_descuento", "fecha_inicio", "fecha_fin"],
             properties: {
                 id_descuento: {
-                    bsonType: "objectId",
+                    bsonType: "int",
                     description: "ID único del descuento"
                 },
                 descripcion: {
@@ -18,17 +18,17 @@ db.createCollection("descuentos", {
                     description: "Descripción del descuento"
                 },
                 porcentaje_descuento: {
-                    bsonType: "double",
+                    bsonType: "int",
                     description: "Porcentaje de descuento",
                     minimum: 0,
                     maximum: 100
                 },
                 fecha_inicio: {
-                    bsonType: "date",
+                    bsonType: "string",
                     description: "Fecha de inicio del descuento"
                 },
                 fecha_fin: {
-                    bsonType: "date",
+                    bsonType: "string",
                     description: "Fecha de fin del descuento"
                 }
             }

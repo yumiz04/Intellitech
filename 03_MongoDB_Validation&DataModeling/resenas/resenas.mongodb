@@ -7,31 +7,26 @@ db.createCollection("resenas", {
     validator: {
         $jsonSchema: {
             bsonType: "object",
-            required: ["comentario", "calificacion", "fecha_reseña", "id_cliente", "id_producto"],
+            required: ["comentario", "fecha_resena", "id_cliente", "id_producto"],
             properties: {
                 id_resena: {
-                    bsonType: "objectId",
+                    bsonType: "int",
                     description: "ID único de la reseña"
+                },
+                fecha_resena: {
+                    bsonType: "string",
+                    description: "Fecha en la que se hizo la reseña"
                 },
                 comentario: {
                     bsonType: "string",
                     description: "Comentario del cliente sobre el producto"
                 },
-                calificacion: {
-                    bsonType: "string",
-                    enum: ["Excelente", "Bueno", "Regular", "Malo", "Terrible"],
-                    description: "Calificación del producto"
-                },
-                fecha_reseña: {
-                    bsonType: "date",
-                    description: "Fecha en la que se hizo la reseña"
-                },
                 id_cliente: {
-                    bsonType: "objectId",
+                    bsonType: "int",
                     description: "ID del cliente que hace la reseña"
                 },
                 id_producto: {
-                    bsonType: "objectId",
+                    bsonType: "int",
                     description: "ID del producto evaluado"
                 }
             }
@@ -46,8 +41,4 @@ db.resenas.createIndex(
 
 db.resenas.createIndex(
     { id_producto: 1 }
-);
-
-db.resenas.createIndex(
-    { calificacion: 1 }
 );

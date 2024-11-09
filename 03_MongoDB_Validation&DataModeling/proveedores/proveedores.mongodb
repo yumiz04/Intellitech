@@ -1,16 +1,16 @@
 
 // Usar la base de datos
-use("intellitech-retail")
+use("intellitech-retail");
 
-// Crear la colección de proveedores
+// Crear la colección de proveedores con referencia a direcciones
 db.createCollection("proveedores", {
     validator: {
         $jsonSchema: {
             bsonType: "object",
-            required: ["nombre_proveedor", "contacto", "direcciones"],
+            required: ["nombre_proveedor", "contacto", "id_direccion"],
             properties: {
                 id_proveedor: {
-                    bsonType: "objectId",
+                    bsonType: "int",
                     description: "ID único del proveedor"
                 },
                 nombre_proveedor: {
@@ -42,8 +42,8 @@ db.createCollection("proveedores", {
                             maxItems: 3,
                             uniqueItems: true,
                             items: {
-                                bsonType: 'string',
-                                pattern: "^(\\+\\d{1,3}[- ]?)?\\d{10}$" // Valida lada internacional (opcional) y 10 dígitos
+                                bsonType: "string",
+                                pattern: "^(\\+\\d{1,3}[- ]?)?\\d{10}$" // Valida lada internacional opcional y 10 dígitos
                             }
                         },
                         correo: {
@@ -53,61 +53,20 @@ db.createCollection("proveedores", {
                         }
                     }
                 },
-                direcciones: {
-                    bsonType: "array",
-                    items: {
-                        bsonType: "object",
-                        required: ["pais", "estado", "municipio", "localidad", "calle", "codigo_postal"],
-                        properties: {
-                            id_direcciones: {
-                                bsonType: "objectId",
-                                description: "ID único de la dirección"
-                            },
-                            pais: {
-                                bsonType: "string",
-                                description: "País de la dirección del proveedor"
-                            },
-                            estado: {
-                                bsonType: "string",
-                                description: "Estado de la dirección del proveedor"
-                            },
-                            municipio: {
-                                bsonType: "string",
-                                description: "Municipio de la dirección del proveedor"
-                            },
-                            localidad: {
-                                bsonType: "string",
-                                description: "Localidad de la dirección del proveedor"
-                            },
-                            calle: {
-                                bsonType: "string",
-                                description: "Calle de la dirección del proveedor"
-                            },
-                            codigo_postal: {
-                                bsonType: "string",
-                                description: "Código postal"
-                            },
-                            descripcion_adicional: {
-                                bsonType: "string",
-                                description: "Descripción adicional de la dirección, opcional"
-                            }
-                        }
-                    }
+                id_direccion: {
+                    bsonType: "int",
+                    description: "Referencia al ID de la dirección del proveedor en la colección direcciones_proveedores"
                 }
             }
         }
     }
 });
 
-// Crear índices para optimizar consultas
+// Crear índices para optimizar consultas en la colección de proveedores
 db.proveedores.createIndex(
     { "contacto.telefono": 1 }
 );
 
 db.proveedores.createIndex(
-    { "direcciones.id_direcciones": 1 }
-);
-
-db.proveedores.createIndex(
-    { "direcciones.estado": 1, "direcciones.municipio": 1, "direcciones.pais": 1 }
+    { "nombre_proveedor.primer_nombre": 1, "nombre_proveedor.apellido_paterno": 1 }
 );

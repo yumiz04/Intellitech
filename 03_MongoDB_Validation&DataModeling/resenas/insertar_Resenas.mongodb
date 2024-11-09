@@ -3,4 +3,145 @@
 use("intellitech-retail")
 
 // Insertar el documento en la coleccion de resenas
-db.resenas.insertOne()
+db.resenas.insertMany([
+    {
+        "id_resena": 1,
+        "fecha_resena": "2024-09-01",
+        "comentario": "Excelente calidad, muy satisfecho",
+        "id_cliente": 1,
+        "id_producto": 1
+    },
+    {
+        "id_resena": 2,
+        "fecha_resena": "2024-09-02",
+        "comentario": "Buen producto, aunque algo caro",
+        "id_cliente": 2,
+        "id_producto": 2
+    },
+    {
+        "id_resena": 3,
+        "fecha_resena": "2024-09-03",
+        "comentario": "Producto decente, pero podr?a mejorar",
+        "id_cliente": 3,
+        "id_producto": 3
+    },
+    {
+        "id_resena": 4,
+        "fecha_resena": "2024-09-04",
+        "comentario": "Muy buen servicio, cumple con lo prometido",
+        "id_cliente": 4,
+        "id_producto": 4
+    },
+    {
+        "id_resena": 5,
+        "fecha_resena": "2024-09-05",
+        "comentario": "Buen rendimiento, satisfecho con la compra",
+        "id_cliente": 5,
+        "id_producto": 5
+    },
+    {
+        "id_resena": 6,
+        "fecha_resena": "2024-09-06",
+        "comentario": "Funciona bien, pero no tan intuitivo",
+        "id_cliente": 6,
+        "id_producto": 6
+    },
+    {
+        "id_resena": 7,
+        "fecha_resena": "2024-09-07",
+        "comentario": "Perfecto para mis necesidades",
+        "id_cliente": 7,
+        "id_producto": 7
+    },
+    {
+        "id_resena": 8,
+        "fecha_resena": "2024-09-08",
+        "comentario": "Bien, pero hay mejores opciones en el mercado",
+        "id_cliente": 8,
+        "id_producto": 8
+    },
+    {
+        "id_resena": 9,
+        "fecha_resena": "2024-09-09",
+        "comentario": "Incre?ble calidad, muy recomendable",
+        "id_cliente": 9,
+        "id_producto": 9
+    },
+    {
+        "id_resena": 10,
+        "fecha_resena": "2024-09-10",
+        "comentario": "Cumple su funci?n, aunque caro",
+        "id_cliente": 10,
+        "id_producto": 10
+    },
+    {
+        "id_resena": 11,
+        "fecha_resena": "2024-09-11",
+        "comentario": "Muy buen producto",
+        "id_cliente": 11,
+        "id_producto": 11
+    },
+    {
+        "id_resena": 12,
+        "fecha_resena": "2024-09-12",
+        "comentario": "No tan eficiente como esperaba",
+        "id_cliente": 12,
+        "id_producto": 12
+    },
+    {
+        "id_resena": 13,
+        "fecha_resena": "2024-09-13",
+        "comentario": "Producto adecuado para el precio",
+        "id_cliente": 13,
+        "id_producto": 13
+    },
+    {
+        "id_resena": 14,
+        "fecha_resena": "2024-09-14",
+        "comentario": "Encantado con la compra",
+        "id_cliente": 14,
+        "id_producto": 14
+    },
+    {
+        "id_resena": 15,
+        "fecha_resena": "2024-09-15",
+        "comentario": "Buena relaci?n calidad-precio",
+        "id_cliente": 15,
+        "id_producto": 15
+    },
+    {
+        "id_resena": 16,
+        "fecha_resena": "2024-09-16",
+        "comentario": "Esperaba un mejor desempe?o",
+        "id_cliente": 16,
+        "id_producto": 16
+    },
+    {
+        "id_resena": 17,
+        "fecha_resena": "2024-09-17",
+        "comentario": "Perfecto, lo recomiendo",
+        "id_cliente": 17,
+        "id_producto": 17
+    },
+    {
+        "id_resena": 18,
+        "fecha_resena": "2024-09-18",
+        "comentario": "Buen producto, pero puede mejorar",
+        "id_cliente": 18,
+        "id_producto": 18
+    },
+    {
+        "id_resena": 19,
+        "fecha_resena": "2024-09-19",
+        "comentario": "Muy buena calidad y precio",
+        "id_cliente": 19,
+        "id_producto": 19
+    },
+    {
+        "id_resena": 20,
+        "fecha_resena": "2024-09-20",
+        "comentario": "Buen producto, algo caro",
+        "id_cliente": 20,
+        "id_producto": 20
+    }
+])

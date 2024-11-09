@@ -3,4 +3,4 @@
 use("intellitech-retail")
 
 // Eliminar los registros
-db.proveedores.drop()
+db.direcciones_proveedores.drop()

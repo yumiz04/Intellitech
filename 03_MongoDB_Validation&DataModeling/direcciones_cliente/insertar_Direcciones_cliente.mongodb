@@ -1,0 +1,187 @@
+
+// Usar la base de datos
+use("intellitech-retail")
+
+// Insertar el documento en la coleccion de direcciones_cliente
+db.direcciones_cliente.insertMany([
+    {
+        "id_direccion": 1,
+        "estado": "Michoac?n",
+        "municipio": "Sahuayo",
+        "localidad": "Centro",
+        "calle": "Av. Independencia 120",
+        "codigo_postal": "59000",
+        "descripcion_adicional": "Frente a la plaza principal"
+    },
+    {
+        "id_direccion": 2,
+        "estado": "Jalisco",
+        "municipio": "Guadalajara",
+        "localidad": "Chapalita",
+        "calle": "Calle Reforma 45",
+        "codigo_postal": "44100",
+        "descripcion_adicional": "A un lado del caf? \"La Taza\""
+    },
+    {
+        "id_direccion": 3,
+        "estado": "Ciudad de M?xico",
+        "municipio": "Coyoac?n",
+        "localidad": "Pedregal",
+        "calle": "Camino al Ajusco 300",
+        "codigo_postal": "4360",
+        "descripcion_adicional": "Cerca del Parque Ecol?gico"
+    },
+    {
+        "id_direccion": 4,
+        "estado": "Michoac?n",
+        "municipio": "Morelia",
+        "localidad": "Vista Bella",
+        "calle": "Paseo del Roble 234",
+        "codigo_postal": "58090",
+        "descripcion_adicional": "A espaldas del centro comercial"
+    },
+    {
+        "id_direccion": 5,
+        "estado": "Guanajuato",
+        "municipio": "Le?n",
+        "localidad": "Campestre",
+        "calle": "Blvd. Aeropuerto 156",
+        "codigo_postal": "37530",
+        "descripcion_adicional": "Frente a la Universidad"
+    },
+    {
+        "id_direccion": 6,
+        "estado": "Jalisco",
+        "municipio": "Zapopan",
+        "localidad": "Andares",
+        "calle": "Av. Patria 98",
+        "codigo_postal": "45110",
+        "descripcion_adicional": "Cerca de Plaza Andares"
+    },
+    {
+        "id_direccion": 7,
+        "estado": "Michoac?n",
+        "municipio": "Zamora",
+        "localidad": "Jacarandas",
+        "calle": "Calle Jacarandas 230",
+        "codigo_postal": "59610",
+        "descripcion_adicional": "A dos cuadras del hospital general"
+    },
+    {
+        "id_direccion": 8,
+        "estado": "Quer?taro",
+        "municipio": "Quer?taro",
+        "localidad": "San Pablo",
+        "calle": "Calle Hidalgo 567",
+        "codigo_postal": "76030",
+        "descripcion_adicional": "Enfrente de la iglesia"
+    },
+    {
+        "id_direccion": 9,
+        "estado": "Puebla",
+        "municipio": "Puebla",
+        "localidad": "La Paz",
+        "calle": "Av. Ju?rez 320",
+        "codigo_postal": "72000",
+        "descripcion_adicional": "A lado del restaurante \"El Fog?n\""
+    },
+    {
+        "id_direccion": 10,
+        "estado": "Nuevo Le?n",
+        "municipio": "Monterrey",
+        "localidad": "Centro",
+        "calle": "Calle Morelos 89",
+        "codigo_postal": "64000",
+        "descripcion_adicional": "Cerca del Museo de Historia"
+    },
+    {
+        "id_direccion": 11,
+        "estado": "Veracruz",
+        "municipio": "Veracruz",
+        "localidad": "Centro",
+        "calle": "Calle 16 de Septiembre 150",
+        "codigo_postal": "91700",
+        "descripcion_adicional": "Cerca del Malec?n"
+    },
+    {
+        "id_direccion": 12,
+        "estado": "Baja California",
+        "municipio": "Tijuana",
+        "localidad": "Zona Centro",
+        "calle": "Calle 5ta 200",
+        "codigo_postal": "22000",
+        "descripcion_adicional": "Cerca de la Plaza R?o"
+    },
+    {
+        "id_direccion": 13,
+        "estado": "Durango",
+        "municipio": "Durango",
+        "localidad": "Centro",
+        "calle": "Calle 20 de Noviembre 75",
+        "codigo_postal": "34000",
+        "descripcion_adicional": "A un lado de la Plaza de Armas"
+    },
+    {
+        "id_direccion": 14,
+        "estado": "San Luis Potos?",
+        "municipio": "San Luis Potos?",
+        "localidad": "Centro Hist?rico",
+        "calle": "Calle Carranza 45",
+        "codigo_postal": "78000",
+        "descripcion_adicional": "Cerca de la Catedral"
+    },
+    {
+        "id_direccion": 15,
+        "estado": "Chihuahua",
+        "municipio": "Chihuahua",
+        "localidad": "Centro",
+        "calle": "Calle Ju?rez 345",
+        "codigo_postal": "31000",
+        "descripcion_adicional": "Frente a la Plaza de Armas"
+    },
+    {
+        "id_direccion": 16,
+        "estado": "Hidalgo",
+        "municipio": "Pachuca",
+        "localidad": "Zona Plateada",
+        "calle": "Calle Cuauht?moc 120",
+        "codigo_postal": "42080",
+        "descripcion_adicional": "Cerca del Reloj Monumental"
+    },
+    {
+        "id_direccion": 17,
+        "estado": "Coahuila",
+        "municipio": "Saltillo",
+        "localidad": "Centro",
+        "calle": "Calle Aldama 35",
+        "codigo_postal": "25000",
+        "descripcion_adicional": "Cerca del Teatro de la Ciudad"
+    },
+    {
+        "id_direccion": 18,
+        "estado": "Tamaulipas",
+        "municipio": "Matamoros",
+        "localidad": "Centro",
+        "calle": "Calle 10 150",
+        "codigo_postal": "87300",
+        "descripcion_adicional": "Cerca de la Plaza Principal"
+    },
+    {
+        "id_direccion": 19,
+        "estado": "Tlaxcala",
+        "municipio": "Tlaxcala",
+        "localidad": "Centro",
+        "calle": "Calle Xicoht?ncatl 200",
+        "codigo_postal": "90000",
+        "descripcion_adicional": "Cerca del Palacio de Gobierno"
+    },
+    {
+        "id_direccion": 20,
+        "estado": "Oaxaca",
+        "municipio": "Oaxaca",
+        "localidad": "Centro",
+        "calle": "Calle Alcal? 400",
+        "codigo_postal": "68000",
+        "descripcion_adicional": "Cerca del Z?calo"
+    }
+])

@@ -1,0 +1,43 @@
+
+// Usar la base de datos
+use("intellitech-retail");
+
+// Crear la colección de direcciones_cliente
+db.createCollection("direcciones_cliente", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["id_direccion", "estado", "municipio", "calle"],
+            properties: {
+                id_direccion: {
+                    bsonType: "int",
+                    description: "ID único de las direcciones del cliente"
+                },
+                estado: {
+                    bsonType: "string",
+                    description: "Estado de la dirección"
+                },
+                municipio: {
+                    bsonType: "string",
+                    description: "Municipio de la dirección"
+                },
+                localidad: {
+                    bsonType: "string",
+                    description: "Localidad de la dirección"
+                },
+                calle: {
+                    bsonType: "string",
+                    description: "Calle de la dirección"
+                },
+                codigo_postal: {
+                    bsonType: "string",
+                    description: "Código postal"
+                },
+                descripcion_adicional: {
+                    bsonType: "string",
+                    description: "Descripción adicional de la dirección"
+                }
+            }
+        }
+    }
+});

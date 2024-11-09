@@ -10,7 +10,7 @@ db.createCollection("tipos_devolucion", {
             required: ["descripcion"],
             properties: {
                 id_tipo_devolucion: {
-                    bsonType: "objectId",
+                    bsonType: "int",
                     description: "ID único del tipo de devolución"
                 },
                 descripcion: {

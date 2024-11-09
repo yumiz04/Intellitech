@@ -3,4 +3,465 @@
 use("intellitech-retail")
 
 // Insertar el documento en la coleccion de clientes
-db.clientes.insertOne()
+db.clientes.insertMany([
+    {
+        "id_cliente": 1,
+        "nombre_cliente": {
+            "primer_nombre": "Juan",
+            "apellido_paterno": "P?rez",
+            "apellido_materno": "Garc?a"
+        },
+        "contacto": {
+            "telefono": [
+                "4423123456"
+            ],
+            "correo": "juan.perez@mail.com"
+        },
+        "rfc": "PEGA800101ABC",
+        "nombre_empresa": "P?rez S.A.",
+        "direcciones": {
+            "id_direccion": 1
+        },
+        "autenticaciones": {
+            "usuario": "juan.perez",
+            "contrasena": "pw123456"
+        }
+    },
+    {
+        "id_cliente": 2,
+        "nombre_cliente": {
+            "primer_nombre": "Ana",
+            "apellido_paterno": "L?pez",
+            "apellido_materno": "Mart?nez"
+        },
+        "contacto": {
+            "telefono": [
+                "5512345678"
+            ],
+            "correo": "ana.lopez@mail.com"
+        },
+        "rfc": "LOMA800202DEF",
+        "nombre_empresa": "L?pez Consultores",
+        "direcciones": {
+            "id_direccion": 2
+        },
+        "autenticaciones": {
+            "usuario": "ana.lopez",
+            "contrasena": "pwabcdef"
+        }
+    },
+    {
+        "id_cliente": 3,
+        "nombre_cliente": {
+            "primer_nombre": "Carlos",
+            "apellido_paterno": "Fern?ndez",
+            "apellido_materno": "Jim?nez"
+        },
+        "contacto": {
+            "telefono": [
+                "6623456789"
+            ],
+            "correo": "carlos.fdz@mail.com"
+        },
+        "rfc": "FEJC800303GHI",
+        "nombre_empresa": "Fern?ndez Ltda.",
+        "direcciones": {
+            "id_direccion": 3
+        },
+        "autenticaciones": {
+            "usuario": "carlos.fdz",
+            "contrasena": "pwghijkl"
+        }
+    },
+    {
+        "id_cliente": 4,
+        "nombre_cliente": {
+            "primer_nombre": "Laura",
+            "apellido_paterno": "Gonz?lez",
+            "apellido_materno": "Rodr?guez"
+        },
+        "contacto": {
+            "telefono": [
+                "8123456789"
+            ],
+            "correo": "laura.gonzalez@mail.com"
+        },
+        "rfc": "GORL800404JKL",
+        "nombre_empresa": "Gonz?lez & Asociados",
+        "direcciones": {
+            "id_direccion": 4
+        },
+        "autenticaciones": {
+            "usuario": "laura.gonzalez",
+            "contrasena": "pwmnopqr"
+        }
+    },
+    {
+        "id_cliente": 5,
+        "nombre_cliente": {
+            "primer_nombre": "Pedro",
+            "apellido_paterno": "Morales",
+            "apellido_materno": "S?nchez"
+        },
+        "contacto": {
+            "telefono": [
+                "9991234567"
+            ],
+            "correo": "pedro.morales@mail.com"
+        },
+        "rfc": "MOSM800505MNO",
+        "nombre_empresa": "Morales Corp.",
+        "direcciones": {
+            "id_direccion": 5
+        },
+        "autenticaciones": {
+            "usuario": "pedro.morales",
+            "contrasena": "pwstuvwx"
+        }
+    },
+    {
+        "id_cliente": 6,
+        "nombre_cliente": {
+            "primer_nombre": "Mar?a",
+            "apellido_paterno": "Ortiz",
+            "apellido_materno": "Ram?rez"
+        },
+        "contacto": {
+            "telefono": [
+                "3312345678"
+            ],
+            "correo": "maria.ortiz@mail.com"
+        },
+        "rfc": "ORMR800606PQR",
+        "nombre_empresa": "Ortiz S.A.",
+        "direcciones": {
+            "id_direccion": 6
+        },
+        "autenticaciones": {
+            "usuario": "maria.ortiz",
+            "contrasena": "pwzyabcd"
+        }
+    },
+    {
+        "id_cliente": 7,
+        "nombre_cliente": {
+            "primer_nombre": "Luis",
+            "apellido_paterno": "Herrera",
+            "apellido_materno": "Castillo"
+        },
+        "contacto": {
+            "telefono": [
+                "2223456789"
+            ],
+            "correo": "luis.herrera@mail.com"
+        },
+        "rfc": "HECL800707STU",
+        "nombre_empresa": "Herrera Enterprises",
+        "direcciones": {
+            "id_direccion": 7
+        },
+        "autenticaciones": {
+            "usuario": "luis.herrera",
+            "contrasena": "pwefghij"
+        }
+    },
+    {
+        "id_cliente": 8,
+        "nombre_cliente": {
+            "primer_nombre": "Sof?a",
+            "apellido_paterno": "Guti?rrez",
+            "apellido_materno": "Torres"
+        },
+        "contacto": {
+            "telefono": [
+                "4432123456"
+            ],
+            "correo": "sofia.gutierrez@mail.com"
+        },
+        "rfc": "GUTS800808VWX",
+        "nombre_empresa": "Guti?rrez Servicios",
+        "direcciones": {
+            "id_direccion": 8
+        },
+        "autenticaciones": {
+            "usuario": "sofia.gutierrez",
+            "contrasena": "pwklmnop"
+        }
+    },
+    {
+        "id_cliente": 9,
+        "nombre_cliente": {
+            "primer_nombre": "Fernanda",
+            "apellido_paterno": "Mu?oz",
+            "apellido_materno": "Rivera"
+        },
+        "contacto": {
+            "telefono": [
+                "7712345678"
+            ],
+            "correo": "fernanda.munoz@mail.com"
+        },
+        "rfc": "MURF800909YZA",
+        "nombre_empresa": "Mu?oz Consultores",
+        "direcciones": {
+            "id_direccion": 9
+        },
+        "autenticaciones": {
+            "usuario": "fernanda.munoz",
+            "contrasena": "pqrstuvw"
+        }
+    },
+    {
+        "id_cliente": 10,
+        "nombre_cliente": {
+            "primer_nombre": "Jorge",
+            "apellido_paterno": "Castillo",
+            "apellido_materno": "Orozco"
+        },
+        "contacto": {
+            "telefono": [
+                "8123123456"
+            ],
+            "correo": "jorge.castillo@mail.com"
+        },
+        "rfc": "CAOJ801010BCD",
+        "nombre_empresa": "Castillo & Co.",
+        "direcciones": {
+            "id_direccion": 10
+        },
+        "autenticaciones": {
+            "usuario": "jorge.castillo",
+            "contrasena": "pwxyz123"
+        }
+    },
+    {
+        "id_cliente": 11,
+        "nombre_cliente": {
+            "primer_nombre": "Diego",
+            "apellido_paterno": "Romero",
+            "apellido_materno": "V?squez"
+        },
+        "contacto": {
+            "telefono": [
+                "5552345678"
+            ],
+            "correo": "diego.romero@mail.com"
+        },
+        "rfc": "ROVD801111EFG",
+        "nombre_empresa": "Romero Design",
+        "direcciones": {
+            "id_direccion": 11
+        },
+        "autenticaciones": {
+            "usuario": "diego.romero",
+            "contrasena": "pw112233"
+        }
+    },
+    {
+        "id_cliente": 12,
+        "nombre_cliente": {
+            "primer_nombre": "Claudia",
+            "apellido_paterno": "Salazar",
+            "apellido_materno": "P?rez"
+        },
+        "contacto": {
+            "telefono": [
+                "4432123457"
+            ],
+            "correo": "claudia.salazar@mail.com"
+        },
+        "rfc": "SAPC801212HJK",
+        "nombre_empresa": "Salazar Group",
+        "direcciones": {
+            "id_direccion": 12
+        },
+        "autenticaciones": {
+            "usuario": "claudia.salazar",
+            "contrasena": "pw445566"
+        }
+    },
+    {
+        "id_cliente": 13,
+        "nombre_cliente": {
+            "primer_nombre": "Santiago",
+            "apellido_paterno": "Cervantes",
+            "apellido_materno": "Hern?ndez"
+        },
+        "contacto": {
+            "telefono": [
+                "1234567890"
+            ],
+            "correo": "santiago.cervantes@mail.com"
+        },
+        "rfc": "CEHS801313LMP",
+        "nombre_empresa": "Cervantes Tech",
+        "direcciones": {
+            "id_direccion": 13
+        },
+        "autenticaciones": {
+            "usuario": "santiago.cervantes",
+            "contrasena": "pw778899"
+        }
+    },
+    {
+        "id_cliente": 14,
+        "nombre_cliente": {
+            "primer_nombre": "Patricia",
+            "apellido_paterno": "R?os",
+            "apellido_materno": "Alonso"
+        },
+        "contacto": {
+            "telefono": [
+                "8882345678"
+            ],
+            "correo": "patricia.rios@mail.com"
+        },
+        "rfc": "RIAP801414NOP",
+        "nombre_empresa": "R?os Corp.",
+        "direcciones": {
+            "id_direccion": 14
+        },
+        "autenticaciones": {
+            "usuario": "patricia.rios",
+            "contrasena": "pw101112"
+        }
+    },
+    {
+        "id_cliente": 15,
+        "nombre_cliente": {
+            "primer_nombre": "Alberto",
+            "apellido_paterno": "Alvarado",
+            "apellido_materno": "Mendoza"
+        },
+        "contacto": {
+            "telefono": [
+                "2345678901"
+            ],
+            "correo": "alberto.alvarado@mail.com"
+        },
+        "rfc": "ALMA801515QRS",
+        "nombre_empresa": "Alvarado Designs",
+        "direcciones": {
+            "id_direccion": 15
+        },
+        "autenticaciones": {
+            "usuario": "alberto.alvarado",
+            "contrasena": "pw131415"
+        }
+    },
+    {
+        "id_cliente": 16,
+        "nombre_cliente": {
+            "primer_nombre": "Ver?nica",
+            "apellido_paterno": "Gonz?lez",
+            "apellido_materno": "L?pez"
+        },
+        "contacto": {
+            "telefono": [
+                "5551234567"
+            ],
+            "correo": "veronica.gonzalez@mail.com"
+        },
+        "rfc": "GOLV801616TUV",
+        "nombre_empresa": "Gonz?lez y Asociados",
+        "direcciones": {
+            "id_direccion": 16
+        },
+        "autenticaciones": {
+            "usuario": "veronica.gonzalez",
+            "contrasena": "pw161718"
+        }
+    },
+    {
+        "id_cliente": 17,
+        "nombre_cliente": {
+            "primer_nombre": "Rafael",
+            "apellido_paterno": "N??ez",
+            "apellido_materno": "Lara"
+        },
+        "contacto": {
+            "telefono": [
+                "6662345678"
+            ],
+            "correo": "rafael.nunez@mail.com"
+        },
+        "rfc": "NULR801717WXY",
+        "nombre_empresa": "N??ez Corp.",
+        "direcciones": {
+            "id_direccion": 17
+        },
+        "autenticaciones": {
+            "usuario": "rafael.nunez",
+            "contrasena": "pw192021"
+        }
+    },
+    {
+        "id_cliente": 18,
+        "nombre_cliente": {
+            "primer_nombre": "Isabel",
+            "apellido_paterno": "Moreno",
+            "apellido_materno": "V?zquez"
+        },
+        "contacto": {
+            "telefono": [
+                "7772345678"
+            ],
+            "correo": "isabel.moreno@mail.com"
+        },
+        "rfc": "MORV801818ZAB",
+        "nombre_empresa": "Moreno Services",
+        "direcciones": {
+            "id_direccion": 18
+        },
+        "autenticaciones": {
+            "usuario": "isabel.moreno",
+            "contrasena": "pw222324"
+        }
+    },
+    {
+        "id_cliente": 19,
+        "nombre_cliente": {
+            "primer_nombre": "Fernando",
+            "apellido_paterno": "Soto",
+            "apellido_materno": "Jim?nez"
+        },
+        "contacto": {
+            "telefono": [
+                "4441234567"
+            ],
+            "correo": "fernando.soto@mail.com"
+        },
+        "rfc": "SOJF801919CDE",
+        "nombre_empresa": "Soto y Asociados",
+        "direcciones": {
+            "id_direccion": 19
+        },
+        "autenticaciones": {
+            "usuario": "fernando.soto",
+            "contrasena": "pw252627"
+        }
+    },
+    {
+        "id_cliente": 20,
+        "nombre_cliente": {
+            "primer_nombre": "Marta",
+            "apellido_paterno": "Torres",
+            "apellido_materno": "Salinas"
+        },
+        "contacto": {
+            "telefono": [
+                "9992345678"
+            ],
+            "correo": "marta.torres@mail.com"
+        },
+        "rfc": "TOSM802020FGH",
+        "nombre_empresa": "Torres Group",
+        "direcciones": {
+            "id_direccion": 20
+        },
+        "autenticaciones": {
+            "usuario": "marta.torres",
+            "contrasena": "pw282930"
+        }
+    }
+])

@@ -7,10 +7,10 @@ db.createCollection("productos", {
     validator: {
         $jsonSchema: {
             bsonType: "object",
-            required: ["nombre_producto", "modelo", "precio", "stock", "id_margen", "id_categoria"],
+            required: ["nombre_producto", "modelo", "precio", "stock", "id_categoria"],
             properties: {
                 id_producto: {
-                    bsonType: "objectId",
+                    bsonType: "int",
                     description: "ID único del producto"
                 },
                 nombre_producto: {
@@ -22,7 +22,7 @@ db.createCollection("productos", {
                     description: "Modelo del producto"
                 },
                 precio: {
-                    bsonType: "double",
+                    bsonType: "int",
                     description: "Precio del producto"
                 },
                 stock: {
@@ -39,12 +39,8 @@ db.createCollection("productos", {
                     description: "Estado del producto"
                 },
                 id_categoria: {
-                    bsonType: "objectId",
+                    bsonType: "int",
                     description: "ID de la categoría"
-                },
-                id_margen: {
-                    bsonType: "objectId",
-                    description: "Referencia al margen de ganancia"
                 }
             }
         }
@@ -54,9 +50,4 @@ db.createCollection("productos", {
 // Crear índice para id_categoria
 db.productos.createIndex(
     { id_categoria: 1 }
-);
-
-// Crear índice para id_margen
-db.productos.createIndex(
-    { id_margen: 1 }
 );

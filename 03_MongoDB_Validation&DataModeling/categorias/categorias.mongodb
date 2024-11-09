@@ -10,7 +10,7 @@ db.createCollection("categorias", {
             required: ["nombre_categoria"],
             properties: {
                 id_categoria: {
-                    bsonType: "objectId",
+                    bsonType: "int",
                     description: "ID único de la categoría"
                 },
                 nombre_categoria: {

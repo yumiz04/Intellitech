@@ -1,6 +1,6 @@
 
 // Usar la base de datos
-use("intellitech-retail")
+use("intellitech-retail");
 
 // Crear la colección de clientes
 db.createCollection("clientes", {
@@ -10,13 +10,13 @@ db.createCollection("clientes", {
             required: ["nombre_cliente", "contacto"],
             properties: {
                 id_cliente: {
-                    bsonType: "objectId",
+                    bsonType: "int",
                     description: "ID único del cliente"
                 },
                 nombre_cliente: {
                     bsonType: "object",
                     title: "Validación del objeto nombre_cliente",
-                    required: ["primer_nombre", "apellido_paterno", "apellido_materno"],
+                    required: ["primer_nombre", "apellido_paterno"],
                     properties: {
                         primer_nombre: {
                             bsonType: "string",
@@ -64,46 +64,9 @@ db.createCollection("clientes", {
                     bsonType: "string",
                     description: "Nombre de la empresa del cliente"
                 },
-                direcciones: {
-                    bsonType: "array",
-                    items: {
-                        bsonType: "object",
-                        required: ["estado", "municipio", "calle", "codigo_postal"],
-                        properties: {
-                            id_direccion: {
-                                bsonType: "objectId",
-                                description: "ID único de las direcciones del cliente"
-                            },
-                            pais: {
-                                bsonType: "string",
-                                description: "País de la dirección"
-                            },
-                            estado: {
-                                bsonType: "string",
-                                description: "Estado de la dirección"
-                            },
-                            municipio: {
-                                bsonType: "string",
-                                description: "Municipio de la dirección"
-                            },
-                            localidad: {
-                                bsonType: "string",
-                                description: "Localidad de la dirección"
-                            },
-                            calle: {
-                                bsonType: "string",
-                                description: "Calle de la dirección"
-                            },
-                            codigo_postal: {
-                                bsonType: "string",
-                                description: "Código postal"
-                            },
-                            descripcion_adicional: {
-                                bsonType: "string",
-                                description: "Descripción adicional de la dirección"
-                            }
-                        }
-                    }
+                id_direccion: {
+                    bsonType: "int",
+                    description: "Referencia al ID de la dirección del cliente"
                 },
                 autenticaciones: {
                     bsonType: "object",

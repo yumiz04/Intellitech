@@ -3,4 +3,205 @@
 use("intellitech-retail")
 
 // Insertar el documento en la coleccion de pedidos
-db.pedidos.insertOne()
+db.pedidos.insertMany([
+    {
+        "id_pedido": 1,
+        "fecha_pedido": "2024-09-01",
+        "total_pedido": 100.00,
+        "descuento_total": 2.00,
+        "total_general": 98.00,
+        "id_estado_pedido": 1,
+        "id_tiempos_entrega": 1,
+        "id_cliente": 1
+    },
+    {
+        "id_pedido": 2,
+        "fecha_pedido": "2024-09-05",
+        "total_pedido": 150.00,
+        "descuento_total": 3.00,
+        "total_general": 147.00,
+        "id_estado_pedido": 2,
+        "id_tiempos_entrega": 2,
+        "id_cliente": 2
+    },
+    {
+        "id_pedido": 3,
+        "fecha_pedido": "2024-09-10",
+        "total_pedido": 200.00,
+        "descuento_total": 5.00,
+        "total_general": 195.00,
+        "id_estado_pedido": 3,
+        "id_tiempos_entrega": 3,
+        "id_cliente": 3
+    },
+    {
+        "id_pedido": 4,
+        "fecha_pedido": "2024-09-12",
+        "total_pedido": 120.00,
+        "descuento_total": 2.00,
+        "total_general": 118.00,
+        "id_estado_pedido": 4,
+        "id_tiempos_entrega": 4,
+        "id_cliente": 4
+    },
+    {
+        "id_pedido": 5,
+        "fecha_pedido": "2024-09-15",
+        "total_pedido": 90.00,
+        "descuento_total": 3.00,
+        "total_general": 87.00,
+        "id_estado_pedido": 5,
+        "id_tiempos_entrega": 5,
+        "id_cliente": 5
+    },
+    {
+        "id_pedido": 6,
+        "fecha_pedido": "2024-09-20",
+        "total_pedido": 130.00,
+        "descuento_total": 5.00,
+        "total_general": 125.00,
+        "id_estado_pedido": 6,
+        "id_tiempos_entrega": 6,
+        "id_cliente": 6
+    },
+    {
+        "id_pedido": 7,
+        "fecha_pedido": "2024-09-25",
+        "total_pedido": 85.00,
+        "descuento_total": 2.00,
+        "total_general": 83.00,
+        "id_estado_pedido": 7,
+        "id_tiempos_entrega": 7,
+        "id_cliente": 7
+    },
+    {
+        "id_pedido": 8,
+        "fecha_pedido": "2024-10-01",
+        "total_pedido": 160.00,
+        "descuento_total": 3.00,
+        "total_general": 157.00,
+        "id_estado_pedido": 8,
+        "id_tiempos_entrega": 8,
+        "id_cliente": 8
+    },
+    {
+        "id_pedido": 9,
+        "fecha_pedido": "2024-10-05",
+        "total_pedido": 75.00,
+        "descuento_total": 5.00,
+        "total_general": 70.00,
+        "id_estado_pedido": 9,
+        "id_tiempos_entrega": 9,
+        "id_cliente": 9
+    },
+    {
+        "id_pedido": 10,
+        "fecha_pedido": "2024-10-10",
+        "total_pedido": 140.00,
+        "descuento_total": 2.00,
+        "total_general": 138.00,
+        "id_estado_pedido": 10,
+        "id_tiempos_entrega": 10,
+        "id_cliente": 10
+    },
+    {
+        "id_pedido": 11,
+        "fecha_pedido": "2024-10-15",
+        "total_pedido": 110.00,
+        "descuento_total": 3.00,
+        "total_general": 107.00,
+        "id_estado_pedido": 11,
+        "id_tiempos_entrega": 11,
+        "id_cliente": 11
+    },
+    {
+        "id_pedido": 12,
+        "fecha_pedido": "2024-10-20",
+        "total_pedido": 160.00,
+        "descuento_total": 5.00,
+        "total_general": 155.00,
+        "id_estado_pedido": 12,
+        "id_tiempos_entrega": 12,
+        "id_cliente": 12
+    },
+    {
+        "id_pedido": 13,
+        "fecha_pedido": "2024-10-25",
+        "total_pedido": 95.00,
+        "descuento_total": 2.00,
+        "total_general": 93.00,
+        "id_estado_pedido": 13,
+        "id_tiempos_entrega": 13,
+        "id_cliente": 13
+    },
+    {
+        "id_pedido": 14,
+        "fecha_pedido": "2024-11-01",
+        "total_pedido": 180.00,
+        "descuento_total": 3.00,
+        "total_general": 177.00,
+        "id_estado_pedido": 14,
+        "id_tiempos_entrega": 14,
+        "id_cliente": 14
+    },
+    {
+        "id_pedido": 15,
+        "fecha_pedido": "2024-11-05",
+        "total_pedido": 70.00,
+        "descuento_total": 5.00,
+        "total_general": 65.00,
+        "id_estado_pedido": 15,
+        "id_tiempos_entrega": 15,
+        "id_cliente": 15
+    },
+    {
+        "id_pedido": 16,
+        "fecha_pedido": "2024-11-10",
+        "total_pedido": 150.00,
+        "descuento_total": 2.00,
+        "total_general": 148.00,
+        "id_estado_pedido": 16,
+        "id_tiempos_entrega": 16,
+        "id_cliente": 16
+    },
+    {
+        "id_pedido": 17,
+        "fecha_pedido": "2024-11-15",
+        "total_pedido": 90.00,
+        "descuento_total": 3.00,
+        "total_general": 87.00,
+        "id_estado_pedido": 17,
+        "id_tiempos_entrega": 17,
+        "id_cliente": 17
+    },
+    {
+        "id_pedido": 18,
+        "fecha_pedido": "2024-11-20",
+        "total_pedido": 130.00,
+        "descuento_total": 5.00,
+        "total_general": 125.00,
+        "id_estado_pedido": 18,
+        "id_tiempos_entrega": 18,
+        "id_cliente": 18
+    },
+    {
+        "id_pedido": 19,
+        "fecha_pedido": "2024-12-01",
+        "total_pedido": 85.00,
+        "descuento_total": 2.00,
+        "total_general": 83.00,
+        "id_estado_pedido": 19,
+        "id_tiempos_entrega": 19,
+        "id_cliente": 19
+    },
+    {
+        "id_pedido": 20,
+        "fecha_pedido": "2024-12-05",
+        "total_pedido": 140.00,
+        "descuento_total": 3.00,
+        "total_general": 137.00,
+        "id_estado_pedido": 20,
+        "id_tiempos_entrega": 20,
+        "id_cliente": 20
+    }
+])

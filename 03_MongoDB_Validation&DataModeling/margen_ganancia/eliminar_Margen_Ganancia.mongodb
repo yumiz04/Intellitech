@@ -3,4 +3,4 @@
 use("intellitech-retail")
 
 // Eliminar los registros
-db.Margen_ganancia.drop()
+db.margen_ganancia.drop()

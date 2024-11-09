@@ -7,48 +7,23 @@ db.createCollection("compras", {
     validator: {
         $jsonSchema: {
             bsonType: "object",
-            required: ["fecha_compra", "total_compra", "id_proveedor"],
+            required: ["fecha_compra", "precio_compra", "id_proveedor"],
             properties: {
                 id_compra: {
-                    bsonType: "objectId",
+                    bsonType: "int",
                     description: "ID único de la compra"
                 },
                 fecha_compra: {
-                    bsonType: "date",
+                    bsonType: "string",
                     description: "Fecha en que se realizó la compra"
                 },
-                total_compra: {
-                    bsonType: "double",
+                precio_compra: {
+                    bsonType: "int",
                     description: "Monto total de la compra"
                 },
                 id_proveedor: {
-                    bsonType: "objectId",
+                    bsonType: "int",
                     description: "ID del proveedor"
-                },
-                detalles_compra: {
-                    bsonType: "array",
-                    items: {
-                        bsonType: "object",
-                        required: ["cantidad", "precio_unitario", "total", "id_producto"],
-                        properties: {
-                            cantidad: {
-                                bsonType: "int",
-                                description: "Cantidad de productos comprados"
-                            },
-                            precio_unitario: {
-                                bsonType: "double",
-                                description: "Precio unitario del producto"
-                            },
-                            total: {
-                                bsonType: "double",
-                                description: "Total del detalle de compra"
-                            },
-                            id_producto: {
-                                bsonType: "objectId",
-                                description: "ID del producto"
-                            }
-                        }
-                    }
                 }
             }
         }
@@ -58,9 +33,4 @@ db.createCollection("compras", {
 // Índice para id_proveedor 
 db.compras.createIndex(
     { id_proveedor: 1 }
-);
-
-// Índice para id_producto
-db.compras.createIndex(
-    { "detalles_compra.id_producto": 1 }
 );
